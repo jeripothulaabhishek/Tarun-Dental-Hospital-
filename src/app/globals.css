@@ -1,74 +1,74 @@
 @import "tailwindcss";
 
 @theme {
-  /* ─── Brand Colors ─────────────────────────────────────────── */
-  --color-primary: #2563eb;
-  --color-primary-light: #3b82f6;
-  --color-primary-dark: #1d4ed8;
-  --color-primary-50: #eff6ff;
-  --color-primary-100: #dbeafe;
-  --color-primary-200: #bfdbfe;
-  --color-primary-500: #3b82f6;
-  --color-primary-600: #2563eb;
-  --color-primary-700: #1d4ed8;
+  /* ─── Black & Imperial Gold Brand Colors ────────────────────── */
+  --color-primary: #eab308;
+  --color-primary-light: #facc15;
+  --color-primary-dark: #ca8a04;
+  --color-primary-50: #fefce8;
+  --color-primary-100: #fef9c3;
+  --color-primary-200: #fef08a;
+  --color-primary-500: #eab308;
+  --color-primary-600: #ca8a04;
+  --color-primary-700: #a16207;
 
-  --color-secondary: #0f172a;
-  --color-accent: #14b8a6;
-  --color-accent-light: #2dd4bf;
-  --color-accent-dark: #0d9488;
+  --color-secondary: #090a0f;
+  --color-accent: #d4af37;
+  --color-accent-light: #f3e5ab;
+  --color-accent-dark: #aa7c11;
 
-  /* ─── Neutrals ─────────────────────────────────────────────── */
-  --color-background: #f8fafc;
-  --color-surface: #ffffff;
-  --color-surface-2: #f1f5f9;
-  --color-border: #e2e8f0;
-  --color-border-light: #f1f5f9;
+  /* ─── Obsidian Neutrals ────────────────────────────────────── */
+  --color-background: #07080c;
+  --color-surface: #0f1118;
+  --color-surface-2: #161924;
+  --color-border: rgba(234, 179, 8, 0.2);
+  --color-border-light: rgba(234, 179, 8, 0.12);
 
   /* ─── Text ─────────────────────────────────────────────────── */
-  --color-text-primary: #0f172a;
-  --color-text-secondary: #475569;
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #cbd5e1;
   --color-text-muted: #94a3b8;
-  --color-text-inverse: #ffffff;
+  --color-text-inverse: #07080c;
 
   /* ─── Semantic ─────────────────────────────────────────────── */
   --color-success: #10b981;
   --color-warning: #f59e0b;
   --color-error: #ef4444;
-  --color-info: #3b82f6;
+  --color-info: #eab308;
 
-  /* ─── Gradients ────────────────────────────────────────────── */
-  --gradient-primary: linear-gradient(135deg, #2563eb 0%, #14b8a6 100%);
+  /* ─── Luxury Black & Gold Gradients ────────────────────────── */
+  --gradient-primary: linear-gradient(135deg, #fef08a 0%, #eab308 50%, #ca8a04 100%);
   --gradient-hero: linear-gradient(
     135deg,
-    #0f172a 0%,
-    #1e3a5f 40%,
-    #0d9488 100%
+    #07080c 0%,
+    #0f1118 50%,
+    #020204 100%
   );
   --gradient-card: linear-gradient(
     145deg,
-    rgba(255, 255, 255, 0.9) 0%,
-    rgba(248, 250, 252, 0.8) 100%
+    rgba(15, 17, 24, 0.95) 0%,
+    rgba(22, 25, 36, 0.9) 100%
   );
   --gradient-subtle: linear-gradient(
     180deg,
-    #f8fafc 0%,
-    rgba(248, 250, 252, 0) 100%
+    #07080c 0%,
+    rgba(7, 8, 12, 0) 100%
   );
 
-  /* ─── Shadows ──────────────────────────────────────────────── */
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.12);
-  --shadow-primary: 0 8px 30px rgba(37, 99, 235, 0.25);
-  --shadow-accent: 0 8px 30px rgba(20, 184, 166, 0.25);
-  --shadow-glow: 0 0 40px rgba(37, 99, 235, 0.15);
+  /* ─── Shadows & Gold Glow ──────────────────────────────────── */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.7);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.8);
+  --shadow-primary: 0 8px 30px rgba(234, 179, 8, 0.25);
+  --shadow-accent: 0 8px 30px rgba(212, 175, 55, 0.25);
+  --shadow-glow: 0 0 40px rgba(234, 179, 8, 0.2);
 
   /* ─── Glassmorphism ────────────────────────────────────────── */
-  --glass-bg: rgba(255, 255, 255, 0.8);
-  --glass-bg-strong: rgba(255, 255, 255, 0.95);
-  --glass-border: rgba(255, 255, 255, 0.6);
+  --glass-bg: rgba(15, 17, 24, 0.85);
+  --glass-bg-strong: rgba(15, 17, 24, 0.96);
+  --glass-border: rgba(234, 179, 8, 0.25);
   --glass-blur: blur(20px);
   --glass-blur-lg: blur(40px);
 
@@ -96,20 +96,20 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   DARK MODE TOKENS
+   BLACK & GOLD ROOT & DARK MODE TOKENS
 ═══════════════════════════════════════════════════════════════ */
-.dark {
-  --color-background: #0a0f1e;
-  --color-surface: #111827;
-  --color-surface-2: #1e2535;
-  --color-border: #1e2d47;
-  --color-border-light: #1a2540;
-  --color-text-primary: #f1f5f9;
-  --color-text-secondary: #94a3b8;
-  --color-text-muted: #64748b;
-  --glass-bg: rgba(17, 24, 39, 0.85);
-  --glass-bg-strong: rgba(17, 24, 39, 0.97);
-  --glass-border: rgba(255, 255, 255, 0.08);
+:root, .dark {
+  --color-background: #07080c;
+  --color-surface: #0f1118;
+  --color-surface-2: #161924;
+  --color-border: rgba(234, 179, 8, 0.2);
+  --color-border-light: rgba(234, 179, 8, 0.12);
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #94a3b8;
+  --glass-bg: rgba(15, 17, 24, 0.85);
+  --glass-bg-strong: rgba(15, 17, 24, 0.97);
+  --glass-border: rgba(234, 179, 8, 0.25);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -216,7 +216,7 @@ p {
 }
 
 .gradient-text-hero {
-  background: linear-gradient(135deg, #ffffff 0%, #93c5fd 60%, #5eead4 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #fef08a 50%, #eab308 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -234,6 +234,7 @@ p {
 
 .card-premium:hover {
   box-shadow: var(--shadow-xl);
+  border-color: rgba(234, 179, 8, 0.4);
   transform: translateY(-4px);
 }
 
@@ -244,22 +245,23 @@ p {
   justify-content: center;
   gap: 0.5rem;
   padding: 0.875rem 2rem;
-  background: var(--gradient-primary);
-  color: white;
-  font-weight: 600;
+  background: linear-gradient(135deg, #fef08a 0%, #eab308 50%, #ca8a04 100%);
+  color: #07080c;
+  font-weight: 700;
   font-size: 0.9375rem;
   border-radius: var(--radius-full);
   border: none;
   cursor: pointer;
   transition: all var(--transition-base);
-  box-shadow: var(--shadow-primary);
+  box-shadow: 0 8px 25px rgba(234, 179, 8, 0.3);
   text-decoration: none;
   white-space: nowrap;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 12px 35px rgba(234, 179, 8, 0.45);
+  background: linear-gradient(135deg, #ffffff 0%, #facc15 50%, #eab308 100%);
 }
 
 .btn-primary:active {
@@ -273,11 +275,11 @@ p {
   gap: 0.5rem;
   padding: 0.875rem 2rem;
   background: transparent;
-  color: var(--color-primary);
+  color: #eab308;
   font-weight: 600;
   font-size: 0.9375rem;
   border-radius: var(--radius-full);
-  border: 2px solid var(--color-primary);
+  border: 1px solid rgba(234, 179, 8, 0.4);
   cursor: pointer;
   transition: all var(--transition-base);
   text-decoration: none;
@@ -285,8 +287,9 @@ p {
 }
 
 .btn-secondary:hover {
-  background: var(--color-primary);
-  color: white;
+  background: rgba(234, 179, 8, 0.15);
+  border-color: #eab308;
+  color: #fef08a;
   transform: translateY(-2px);
 }
 
@@ -296,22 +299,24 @@ p {
   justify-content: center;
   gap: 0.5rem;
   padding: 0.875rem 2rem;
-  background: white;
-  color: var(--color-primary);
+  background: #161924;
+  color: #f8fafc;
   font-weight: 700;
   font-size: 0.9375rem;
   border-radius: var(--radius-full);
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   cursor: pointer;
   transition: all var(--transition-base);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
   text-decoration: none;
   white-space: nowrap;
 }
 
 .btn-white:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  border-color: rgba(234, 179, 8, 0.4);
+  color: #eab308;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
 }
 
 .btn-whatsapp {
@@ -352,18 +357,20 @@ p {
 }
 
 .badge-primary {
-  background: var(--color-primary-100);
-  color: var(--color-primary-700);
+  background: rgba(234, 179, 8, 0.15);
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  color: #facc15;
 }
 
 .badge-accent {
-  background: rgba(20, 184, 166, 0.1);
-  color: var(--color-accent-dark);
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: #fef08a;
 }
 
 .badge-success {
-  background: rgba(16, 185, 129, 0.1);
-  color: #065f46;
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
 }
 
 /* ─── Section Label ─────────────────────────────────────────── */
@@ -375,7 +382,7 @@ p {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-primary);
+  color: #eab308;
   margin-bottom: 1rem;
 }
 

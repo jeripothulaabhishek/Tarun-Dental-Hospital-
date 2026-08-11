@@ -13,11 +13,11 @@ export default function LocationMap() {
   return (
     <section
       ref={ref}
-      className="section bg-slate-50 dark:bg-slate-950"
+      className="section bg-[#07080c] relative overflow-hidden"
       id="location"
       aria-label="Our location and contact information"
     >
-      <div className="container">
+      <div className="container relative z-10">
         <SectionHeader
           label="Find Us"
           title="Visit Our Clinic in "
@@ -35,21 +35,21 @@ export default function LocationMap() {
             className="space-y-4"
           >
             {/* Address */}
-            <div className="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800">
+            <div className="bg-[#0f1118] rounded-2xl p-5 border border-amber-500/20">
               <div className="flex gap-3">
-                <div className="w-10 h-10 bg-blue-50 dark:bg-blue-950/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <MapPin size={18} className="text-blue-600" />
+                <div className="w-10 h-10 bg-amber-500/10 border border-amber-500/25 rounded-xl flex items-center justify-center flex-shrink-0 text-amber-400">
+                  <MapPin size={18} />
                 </div>
                 <div>
-                  <p className="font-semibold text-slate-800 dark:text-slate-200 text-sm mb-1">Address</p>
-                  <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                  <p className="font-semibold text-white text-sm mb-1">Address</p>
+                  <p className="text-slate-300 text-sm leading-relaxed">
                     {SITE.address.full}
                   </p>
                   <a
                     href={SITE.mapsDirections}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-blue-600 text-xs font-semibold mt-2 hover:gap-2.5 transition-all"
+                    className="inline-flex items-center gap-1.5 text-amber-400 text-xs font-semibold mt-2 hover:gap-2.5 transition-all"
                   >
                     <Navigation size={12} />
                     Get Directions
@@ -59,25 +59,25 @@ export default function LocationMap() {
             </div>
 
             {/* Hours */}
-            <div className="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800">
+            <div className="bg-[#0f1118] rounded-2xl p-5 border border-amber-500/20">
               <div className="flex gap-3">
-                <div className="w-10 h-10 bg-teal-50 dark:bg-teal-950/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Clock size={18} className="text-teal-600" />
+                <div className="w-10 h-10 bg-amber-500/10 border border-amber-500/25 rounded-xl flex items-center justify-center flex-shrink-0 text-amber-400">
+                  <Clock size={18} />
                 </div>
                 <div className="flex-1">
-                  <p className="font-semibold text-slate-800 dark:text-slate-200 text-sm mb-2">Clinic Hours</p>
+                  <p className="font-semibold text-white text-sm mb-2">Clinic Hours</p>
                   {[
                     { day: "Mon – Fri", hours: SITE.hours.weekday },
                     { day: "Saturday", hours: SITE.hours.saturday },
                     { day: "Sunday", hours: SITE.hours.sunday },
                   ].map(({ day, hours }) => (
                     <div key={day} className="flex justify-between text-xs mb-1.5">
-                      <span className="text-slate-500 dark:text-slate-400">{day}</span>
-                      <span className="font-semibold text-slate-700 dark:text-slate-300">{hours}</span>
+                      <span className="text-slate-400">{day}</span>
+                      <span className="font-semibold text-slate-200">{hours}</span>
                     </div>
                   ))}
-                  <div className="mt-2 flex items-center gap-1.5 text-xs text-green-600 font-semibold">
-                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                  <div className="mt-2 flex items-center gap-1.5 text-xs text-amber-400 font-semibold">
+                    <div className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
                     Emergency care available
                   </div>
                 </div>
@@ -85,18 +85,18 @@ export default function LocationMap() {
             </div>
 
             {/* Contact */}
-            <div className="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800">
+            <div className="bg-[#0f1118] rounded-2xl p-5 border border-amber-500/20">
               <div className="space-y-3">
                 <a
                   href={`tel:${SITE.phoneRaw}`}
                   className="flex items-center gap-3 group"
                 >
-                  <div className="w-10 h-10 bg-blue-50 dark:bg-blue-950/30 rounded-xl flex items-center justify-center">
-                    <Phone size={16} className="text-blue-600" />
+                  <div className="w-10 h-10 bg-amber-500/10 border border-amber-500/25 rounded-xl flex items-center justify-center text-amber-400 group-hover:bg-amber-400 group-hover:text-[#07080c] transition-colors">
+                    <Phone size={16} />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-400 dark:text-slate-500">Phone</p>
-                    <p className="font-semibold text-slate-700 dark:text-slate-300 text-sm group-hover:text-blue-600 transition-colors">
+                    <p className="text-xs text-slate-400">Phone</p>
+                    <p className="font-semibold text-slate-200 text-sm group-hover:text-amber-400 transition-colors">
                       {SITE.phone}
                     </p>
                   </div>
@@ -105,12 +105,12 @@ export default function LocationMap() {
                   href={`mailto:${SITE.email}`}
                   className="flex items-center gap-3 group"
                 >
-                  <div className="w-10 h-10 bg-blue-50 dark:bg-blue-950/30 rounded-xl flex items-center justify-center">
-                    <Mail size={16} className="text-blue-600" />
+                  <div className="w-10 h-10 bg-amber-500/10 border border-amber-500/25 rounded-xl flex items-center justify-center text-amber-400 group-hover:bg-amber-400 group-hover:text-[#07080c] transition-colors">
+                    <Mail size={16} />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-400 dark:text-slate-500">Email</p>
-                    <p className="font-semibold text-slate-700 dark:text-slate-300 text-sm group-hover:text-blue-600 transition-colors">
+                    <p className="text-xs text-slate-400">Email</p>
+                    <p className="font-semibold text-slate-200 text-sm group-hover:text-amber-400 transition-colors">
                       {SITE.email}
                     </p>
                   </div>
@@ -124,7 +124,7 @@ export default function LocationMap() {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-2 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-200 dark:bg-slate-800 min-h-[350px]"
+            className="lg:col-span-2 rounded-2xl overflow-hidden border border-amber-500/20 bg-[#0f1118] min-h-[350px]"
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.2!2d78.3985!3d17.4978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sTarun+Dental+Hospital+Pragathi+Nagar+Hyderabad!5e0!3m2!1sen!2sin!4v1000000"
@@ -143,3 +143,4 @@ export default function LocationMap() {
     </section>
   );
 }
+

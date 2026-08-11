@@ -1,11 +1,13 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { Award, GraduationCap, CheckCircle2, Calendar } from "lucide-react";
 import StarRating from "@/components/ui/StarRating";
 import Link from "next/link";
 import { DOCTOR, SITE } from "@/lib/constants";
+import { IMAGES } from "@/data/images";
 import AnimatedSection from "@/components/shared/AnimatedSection";
 
 export default function DoctorIntro() {
@@ -15,48 +17,33 @@ export default function DoctorIntro() {
   return (
     <section
       ref={ref}
-      className="section bg-white dark:bg-slate-900"
+      className="section bg-[#07080c] relative overflow-hidden"
       id="doctor"
       aria-label="Meet our doctor"
     >
-      <div className="container">
+      {/* Background Subtle Gold Glow */}
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-amber-500/10 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="container relative z-10">
         <div className="grid lg:grid-cols-2 gap-14 items-center">
           {/* ─── Left: Image ─── */}
           <AnimatedSection direction="left">
             <div className="relative">
               {/* Background card */}
-              <div className="absolute inset-4 rounded-3xl bg-gradient-to-br from-blue-600 to-teal-500 opacity-10 dark:opacity-20" />
+              <div className="absolute inset-4 rounded-3xl bg-gradient-to-br from-amber-500 to-yellow-600 opacity-20 blur-xl" />
 
-              {/* Doctor image placeholder */}
-              <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-slate-100 to-blue-50 dark:from-slate-800 dark:to-blue-950/30 aspect-[4/5] flex items-center justify-center border border-slate-200 dark:border-slate-700">
-                {/* SVG Doctor silhouette */}
-                <svg
-                  width="240"
-                  height="320"
-                  viewBox="0 0 240 320"
-                  className="opacity-40"
-                  aria-hidden="true"
-                >
-                  <circle cx="120" cy="80" r="55" fill="#2563eb" opacity="0.6" />
-                  <path
-                    d="M40 240 Q40 170 120 160 Q200 170 200 240 L200 320 L40 320 Z"
-                    fill="#0f172a"
-                    opacity="0.4"
-                  />
-                  <path
-                    d="M95 160 Q95 195 120 200 Q145 195 145 160"
-                    fill="#2563eb"
-                    opacity="0.5"
-                  />
-                  {/* Stethoscope */}
-                  <circle cx="140" cy="220" r="12" fill="none" stroke="#2563eb" strokeWidth="3" opacity="0.6" />
-                  <path d="M140 208 Q140 190 155 185" stroke="#2563eb" strokeWidth="3" fill="none" opacity="0.6" />
-                  <circle cx="158" cy="183" r="5" fill="#2563eb" opacity="0.6" />
-                </svg>
-                {/* Replace with: <Image src="/images/doctor.jpg" alt="Dr. Tarun Kumar" fill className="object-cover" /> */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/80 to-transparent p-6">
-                  <p className="text-white font-bold text-xl">{DOCTOR.name}</p>
-                  <p className="text-blue-200 text-sm">{DOCTOR.qualifications}</p>
+              {/* Doctor Image Container */}
+              <div className="relative rounded-3xl overflow-hidden bg-[#0f1118] aspect-[4/5] flex items-center justify-center border border-amber-500/30 shadow-2xl">
+                <Image
+                  src={IMAGES.doctors.drTarun}
+                  alt={DOCTOR.name}
+                  fill
+                  className="object-cover object-top filter brightness-95 contrast-[1.04]"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#07080c] via-transparent to-transparent p-6 flex flex-col justify-end">
+                  <p className="text-white font-extrabold text-2xl">{DOCTOR.name}</p>
+                  <p className="text-amber-400 font-semibold text-sm">{DOCTOR.qualifications}</p>
                 </div>
               </div>
 
@@ -65,10 +52,10 @@ export default function DoctorIntro() {
                 initial={{ scale: 0 }}
                 animate={isInView ? { scale: 1 } : {}}
                 transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
-                className="absolute -bottom-6 -right-6 bg-gradient-to-br from-blue-600 to-teal-500 rounded-2xl p-5 text-white shadow-xl"
+                className="absolute -bottom-6 -right-6 bg-gradient-to-br from-amber-400 via-amber-500 to-yellow-600 rounded-2xl p-5 text-[#07080c] shadow-2xl border border-amber-300/40"
               >
                 <p className="text-4xl font-black">{SITE.yearsExperience}+</p>
-                <p className="text-xs font-medium text-blue-100">Years of Excellence</p>
+                <p className="text-xs font-bold text-[#07080c]">Years of Excellence</p>
               </motion.div>
 
               {/* Award badge */}
@@ -76,13 +63,13 @@ export default function DoctorIntro() {
                 initial={{ scale: 0 }}
                 animate={isInView ? { scale: 1 } : {}}
                 transition={{ delay: 0.7, type: "spring", stiffness: 200 }}
-                className="absolute -top-4 -left-4 bg-white dark:bg-slate-800 rounded-xl p-3 shadow-lg border border-slate-100 dark:border-slate-700"
+                className="absolute -top-4 -left-4 bg-[#0f1118] rounded-xl p-3 shadow-xl border border-amber-500/30 backdrop-blur-md"
               >
                 <div className="flex items-center gap-2">
-                  <Award size={18} className="text-yellow-500" />
+                  <Award size={18} className="text-amber-400" />
                   <div>
-                    <p className="text-xs font-bold text-slate-800 dark:text-white">Award Winner</p>
-                    <p className="text-[10px] text-slate-400">2023 Excellence</p>
+                    <p className="text-xs font-bold text-white">Award Winner</p>
+                    <p className="text-[10px] text-amber-300">2023 Excellence</p>
                   </div>
                 </div>
               </motion.div>
@@ -94,12 +81,12 @@ export default function DoctorIntro() {
             <div className="space-y-6">
               <div>
                 <p className="section-label">
-                  <span className="w-6 h-px bg-blue-600 inline-block" aria-hidden="true" />
+                  <span className="w-6 h-px bg-amber-400 inline-block" aria-hidden="true" />
                   Meet Your Doctor
-                  <span className="w-6 h-px bg-blue-600 inline-block" aria-hidden="true" />
+                  <span className="w-6 h-px bg-amber-400 inline-block" aria-hidden="true" />
                 </p>
                 <h2
-                  className="font-bold text-slate-900 dark:text-white mb-3"
+                  className="font-bold text-white mb-3"
                   style={{ fontFamily: "var(--font-plus-jakarta)", fontSize: "clamp(2rem, 4vw, 2.75rem)" }}
                 >
                   {DOCTOR.name}
@@ -114,21 +101,21 @@ export default function DoctorIntro() {
                     {DOCTOR.experience}
                   </span>
                 </div>
-                <p className="text-slate-500 dark:text-slate-400 leading-relaxed text-base">
+                <p className="text-slate-300 leading-relaxed text-base">
                   {DOCTOR.bio}
                 </p>
               </div>
 
               {/* Specializations */}
               <div>
-                <h3 className="font-semibold text-slate-800 dark:text-slate-200 text-sm uppercase tracking-wide mb-3">
-                  Specializations
+                <h3 className="font-semibold text-amber-400 text-xs uppercase tracking-wider mb-3">
+                  Clinical Specializations
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {DOCTOR.specializations.map((spec) => (
                     <span
                       key={spec}
-                      className="px-3 py-1.5 bg-blue-50 dark:bg-blue-950/30 text-blue-700 dark:text-blue-300 text-sm rounded-lg font-medium"
+                      className="px-3 py-1.5 bg-amber-500/10 border border-amber-500/25 text-amber-300 text-sm rounded-lg font-medium"
                     >
                       {spec}
                     </span>
@@ -138,13 +125,13 @@ export default function DoctorIntro() {
 
               {/* Achievements */}
               <div>
-                <h3 className="font-semibold text-slate-800 dark:text-slate-200 text-sm uppercase tracking-wide mb-3">
-                  Achievements
+                <h3 className="font-semibold text-amber-400 text-xs uppercase tracking-wider mb-3">
+                  Honors & Recognition
                 </h3>
                 <ul className="space-y-2">
                   {DOCTOR.achievements.map((ach) => (
-                    <li key={ach} className="flex items-start gap-2.5 text-sm text-slate-600 dark:text-slate-400">
-                      <CheckCircle2 size={15} className="text-teal-500 mt-0.5 flex-shrink-0" />
+                    <li key={ach} className="flex items-start gap-2.5 text-sm text-slate-300">
+                      <CheckCircle2 size={15} className="text-amber-400 mt-0.5 flex-shrink-0" />
                       {ach}
                     </li>
                   ))}
@@ -152,13 +139,13 @@ export default function DoctorIntro() {
               </div>
 
               {/* Rating */}
-              <div className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
-                <div className="text-center px-4 border-r border-slate-200 dark:border-slate-700">
-                  <p className="text-3xl font-black text-slate-900 dark:text-white">{SITE.googleRating}</p>
+              <div className="flex items-center gap-4 p-4 bg-[#0f1118] border border-amber-500/20 rounded-xl">
+                <div className="text-center px-4 border-r border-amber-500/20">
+                  <p className="text-3xl font-black text-amber-400">{SITE.googleRating}</p>
                   <StarRating rating={5} size={12} className="justify-center mt-1" />
                 </div>
                 <div>
-                  <p className="font-semibold text-slate-800 dark:text-slate-200 text-sm">
+                  <p className="font-semibold text-white text-sm">
                     Google Verified Rating
                   </p>
                   <p className="text-slate-400 text-xs">
@@ -179,3 +166,4 @@ export default function DoctorIntro() {
     </section>
   );
 }
+

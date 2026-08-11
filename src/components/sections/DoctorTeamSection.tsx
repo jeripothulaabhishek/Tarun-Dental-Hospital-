@@ -21,11 +21,11 @@ export default function DoctorTeamSection() {
   return (
     <section
       ref={ref}
-      className="section bg-slate-50 dark:bg-slate-950"
+      className="section bg-[#07080c] relative overflow-hidden"
       id="doctors"
       aria-label="Meet our doctors"
     >
-      <div className="container">
+      <div className="container relative z-10">
         <SectionHeader
           label="Specialist Team"
           title="Experienced Dental "
@@ -41,20 +41,20 @@ export default function DoctorTeamSection() {
           transition={{ duration: 0.6 }}
           className="mb-14"
         >
-          <Card variant="default" className="p-8 md:p-10 border border-blue-100 dark:border-blue-900/50 bg-white dark:bg-slate-900 shadow-xl rounded-3xl">
+          <Card variant="default" className="p-8 md:p-10 border border-amber-500/30 bg-[#0f1118] shadow-[0_0_40px_rgba(234,179,8,0.1)] rounded-3xl">
             <div className="grid lg:grid-cols-12 gap-8 items-center">
               {/* Doctor Photo */}
               <div className="lg:col-span-5 relative">
-                <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-lg border border-slate-200 dark:border-slate-700 bg-slate-100">
+                <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-lg border border-amber-500/30 bg-[#07080c]">
                   <Image
                     src={leadDoctor.image}
                     alt={leadDoctor.name}
                     fill
-                    className="object-cover"
+                    className="object-cover object-top filter brightness-95 contrast-[1.04]"
                     sizes="(max-width: 1024px) 100vw, 40vw"
                     priority
                   />
-                  <div className="absolute bottom-3 left-3 bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow">
+                  <div className="absolute bottom-3 left-3 bg-gradient-to-r from-amber-400 to-amber-500 text-[#07080c] text-xs font-bold px-3 py-1.5 rounded-lg shadow-md">
                     Chief Surgeon & Founder
                   </div>
                 </div>
@@ -66,26 +66,26 @@ export default function DoctorTeamSection() {
                   <span className="badge badge-primary mb-2">
                     <GraduationCap size={13} /> {leadDoctor.qualifications}
                   </span>
-                  <h3 className="font-extrabold text-slate-900 dark:text-white text-3xl mb-1" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
+                  <h3 className="font-extrabold text-white text-3xl mb-1" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
                     {leadDoctor.name}
                   </h3>
-                  <p className="text-blue-600 dark:text-blue-400 font-semibold text-sm">
+                  <p className="text-amber-400 font-semibold text-sm">
                     {leadDoctor.role} • {leadDoctor.experience}
                   </p>
                 </div>
 
-                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                <p className="text-slate-300 text-sm leading-relaxed">
                   {leadDoctor.bio}
                 </p>
 
                 {/* Specialties */}
                 <div>
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400 mb-2">
                     Clinical Specializations
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {leadDoctor.specialties.map((spec) => (
-                      <span key={spec} className="px-3 py-1 bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 text-xs rounded-lg font-medium border border-blue-100 dark:border-blue-900">
+                      <span key={spec} className="px-3 py-1 bg-amber-500/10 text-amber-300 text-xs rounded-lg font-medium border border-amber-500/25">
                         {spec}
                       </span>
                     ))}
@@ -95,8 +95,8 @@ export default function DoctorTeamSection() {
                 {/* Achievements */}
                 <div className="space-y-1.5 pt-2">
                   {leadDoctor.achievements.map((ach) => (
-                    <div key={ach} className="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400">
-                      <CheckCircle2 size={14} className="text-teal-500 flex-shrink-0" />
+                    <div key={ach} className="flex items-center gap-2 text-xs text-slate-300">
+                      <CheckCircle2 size={14} className="text-amber-400 flex-shrink-0" />
                       <span>{ach}</span>
                     </div>
                   ))}
@@ -127,44 +127,44 @@ export default function DoctorTeamSection() {
         >
           {associateDoctors.map((doc) => (
             <motion.article key={doc.id} variants={staggerItem}>
-              <Card variant="default" className="h-full flex flex-col p-6 hover:shadow-lg transition-all duration-300">
-                <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-4 bg-slate-100 dark:bg-slate-800">
+              <Card variant="default" className="h-full flex flex-col p-6 bg-[#0f1118] border border-amber-500/20 hover:border-amber-500/40 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] transition-all duration-300">
+                <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-4 bg-[#07080c] border border-amber-500/20">
                   <Image
                     src={doc.image}
                     alt={doc.name}
                     fill
-                    className="object-cover"
+                    className="object-cover object-top filter brightness-95"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
-                  <div className="absolute top-2 right-2 bg-slate-900/80 text-white text-[10px] font-semibold px-2.5 py-1 rounded-md backdrop-blur-sm">
+                  <div className="absolute top-2 right-2 bg-[#07080c]/85 text-amber-300 border border-amber-500/30 text-[10px] font-semibold px-2.5 py-1 rounded-md backdrop-blur-sm">
                     {doc.experience}
                   </div>
                 </div>
 
                 <div className="flex-1 flex flex-col justify-between">
                   <div>
-                    <h4 className="font-bold text-slate-900 dark:text-white text-lg mb-0.5">
+                    <h4 className="font-bold text-white text-lg mb-0.5">
                       {doc.name}
                     </h4>
-                    <p className="text-blue-600 dark:text-blue-400 font-medium text-xs mb-2">
+                    <p className="text-amber-400 font-medium text-xs mb-2">
                       {doc.role}
                     </p>
-                    <p className="text-slate-400 text-xs mb-3 font-mono">
+                    <p className="text-amber-300/70 text-xs mb-3 font-mono">
                       {doc.qualifications}
                     </p>
-                    <p className="text-slate-500 dark:text-slate-400 text-xs leading-relaxed mb-4">
+                    <p className="text-slate-300 text-xs leading-relaxed mb-4">
                       {doc.bio}
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-                    <div className="flex items-center gap-1 text-xs text-amber-500 font-bold">
+                  <div className="pt-4 border-t border-amber-500/20 flex items-center justify-between">
+                    <div className="flex items-center gap-1 text-xs text-amber-400 font-bold">
                       <Star size={13} fill="currentColor" />
                       <span>4.9 / 5.0</span>
                     </div>
                     <Link
                       href="/contact"
-                      className="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1"
+                      className="text-xs font-bold text-amber-400 hover:text-amber-300 hover:underline flex items-center gap-1"
                     >
                       Book Doctor →
                     </Link>
@@ -178,3 +178,4 @@ export default function DoctorTeamSection() {
     </section>
   );
 }
+

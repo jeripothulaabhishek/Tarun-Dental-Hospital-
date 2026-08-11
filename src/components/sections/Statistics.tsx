@@ -14,7 +14,6 @@ const stats = [
     suffix: "+",
     label: "Happy Patients",
     description: "Smiles transformed",
-    color: "blue",
   },
   {
     Icon: Award,
@@ -22,7 +21,6 @@ const stats = [
     suffix: "+ Years",
     label: "Expert Experience",
     description: "Of dental excellence",
-    color: "teal",
   },
   {
     Icon: Star,
@@ -30,7 +28,6 @@ const stats = [
     suffix: "%",
     label: "Success Rate",
     description: "Treatment outcomes",
-    color: "yellow",
   },
   {
     Icon: ThumbsUp,
@@ -38,16 +35,8 @@ const stats = [
     suffix: "+",
     label: "Google Reviews",
     description: `Avg. rating ${SITE.googleRating}★`,
-    color: "green",
   },
 ];
-
-const colorMap = {
-  blue: "bg-blue-50 dark:bg-blue-950/20 text-blue-600",
-  teal: "bg-teal-50 dark:bg-teal-950/20 text-teal-600",
-  yellow: "bg-yellow-50 dark:bg-yellow-950/20 text-yellow-500",
-  green: "bg-green-50 dark:bg-green-950/20 text-green-600",
-};
 
 export default function Statistics() {
   const ref = useRef<HTMLElement>(null);
@@ -56,34 +45,34 @@ export default function Statistics() {
   return (
     <section
       ref={ref}
-      className="section bg-white dark:bg-slate-900 py-16 md:py-20"
+      className="section bg-[#07080c] py-16 md:py-20 relative overflow-hidden"
       aria-label="Our statistics"
     >
-      <div className="container">
+      <div className="container relative z-10">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
         >
-          {stats.map(({ Icon, value, suffix, label, description, color }) => (
+          {stats.map(({ Icon, value, suffix, label, description }) => (
             <motion.div
               key={label}
               variants={staggerItem}
-              className="card-premium p-6 lg:p-8 text-center group"
+              className="bg-[#0f1118] border border-amber-500/20 hover:border-amber-500/40 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] rounded-2xl p-6 lg:p-8 text-center group transition-all duration-300"
             >
               <div
-                className={`w-12 h-12 rounded-xl ${colorMap[color as keyof typeof colorMap]} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
+                className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:border-amber-400 text-amber-400 transition-all duration-300"
               >
                 <Icon size={22} />
               </div>
-              <div className="text-3xl lg:text-4xl font-black text-slate-900 dark:text-white mb-1" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
+              <div className="text-3xl lg:text-4xl font-black text-amber-400 mb-1" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
                 <AnimatedCounter value={value} suffix={suffix} />
               </div>
-              <p className="font-semibold text-slate-800 dark:text-slate-200 text-sm mb-0.5">
+              <p className="font-semibold text-white text-sm mb-0.5">
                 {label}
               </p>
-              <p className="text-xs text-slate-400 dark:text-slate-500">
+              <p className="text-xs text-slate-400">
                 {description}
               </p>
             </motion.div>
@@ -93,3 +82,4 @@ export default function Statistics() {
     </section>
   );
 }
+

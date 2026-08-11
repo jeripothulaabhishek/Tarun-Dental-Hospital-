@@ -25,11 +25,11 @@ export default function BeforeAfterShowcase() {
 
   return (
     <section
-      className="section bg-white dark:bg-slate-900 overflow-hidden"
+      className="section bg-[#07080c] relative overflow-hidden"
       id="before-after"
       aria-label="Before and after treatment showcase"
     >
-      <div className="container">
+      <div className="container relative z-10">
         <SectionHeader
           label="Proven Smile Results"
           title="Transformations That "
@@ -46,8 +46,8 @@ export default function BeforeAfterShowcase() {
               onClick={() => setActiveCategory(cat)}
               className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 ${
                 activeCategory === cat
-                  ? "bg-gradient-to-r from-blue-600 to-teal-500 text-white shadow-md shadow-blue-500/20 scale-105"
-                  : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700"
+                  ? "bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-600 text-[#07080c] shadow-lg shadow-amber-500/20 scale-105"
+                  : "bg-[#0f1118] border border-amber-500/20 text-slate-300 hover:border-amber-500/40 hover:text-amber-400"
               }`}
             >
               {cat}
@@ -70,19 +70,19 @@ export default function BeforeAfterShowcase() {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.4 }}
                 >
-                  <Card variant="default" className="p-0 overflow-hidden group border border-slate-200 dark:border-slate-800">
+                  <Card variant="default" className="p-0 overflow-hidden group border border-amber-500/20 bg-[#0f1118]">
                     {/* Header bar */}
-                    <div className="p-5 bg-slate-50 dark:bg-slate-800/60 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+                    <div className="p-5 bg-[#161924] border-b border-amber-500/20 flex justify-between items-center">
                       <div>
-                        <span className="text-[10px] font-bold tracking-widest text-blue-600 dark:text-blue-400 uppercase font-mono">
+                        <span className="text-[10px] font-bold tracking-widest text-amber-400 uppercase font-mono">
                           {item.category}
                         </span>
-                        <h3 className="font-bold text-slate-900 dark:text-white text-base">
+                        <h3 className="font-bold text-white text-base">
                           {item.title}
                         </h3>
                       </div>
                       {item.isDemo && (
-                        <span className="inline-flex items-center gap-1 text-[10px] font-semibold bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 px-2.5 py-1 rounded-full border border-amber-200 dark:border-amber-800">
+                        <span className="inline-flex items-center gap-1 text-[10px] font-semibold bg-amber-500/10 text-amber-300 px-2.5 py-1 rounded-full border border-amber-500/30">
                           <ShieldCheck size={11} />
                           Clinical Demo Case
                         </span>
@@ -90,7 +90,7 @@ export default function BeforeAfterShowcase() {
                     </div>
 
                     {/* Interactive Image Splitter */}
-                    <div className="relative w-full aspect-[16/10] overflow-hidden select-none bg-slate-950">
+                    <div className="relative w-full aspect-[16/10] overflow-hidden select-none bg-[#07080c]">
                       {/* AFTER Image (Full background) */}
                       <Image
                         src={item.afterImage}
@@ -99,7 +99,7 @@ export default function BeforeAfterShowcase() {
                         className="object-cover"
                         sizes="(max-width: 768px) 100vw, 50vw"
                       />
-                      <div className="absolute top-3 right-3 bg-emerald-600/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-md shadow-md backdrop-blur-sm">
+                      <div className="absolute top-3 right-3 bg-gradient-to-r from-amber-400 to-amber-500 text-[#07080c] text-[10px] font-bold px-2.5 py-1 rounded-md shadow-md backdrop-blur-sm">
                         AFTER
                       </div>
 
@@ -116,18 +116,18 @@ export default function BeforeAfterShowcase() {
                           style={{ width: "100%", height: "100%" }}
                           sizes="(max-width: 768px) 100vw, 50vw"
                         />
-                        <div className="absolute top-3 left-3 bg-slate-900/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-md shadow-md backdrop-blur-sm">
+                        <div className="absolute top-3 left-3 bg-[#07080c]/90 text-slate-300 text-[10px] font-bold px-2.5 py-1 rounded-md shadow-md backdrop-blur-sm border border-amber-500/20">
                           BEFORE
                         </div>
                       </div>
 
                       {/* Divider Handle */}
                       <div
-                        className="absolute top-0 bottom-0 w-1 bg-white shadow-[0_0_12px_rgba(0,0,0,0.8)] z-10 cursor-ew-resize flex items-center justify-center"
+                        className="absolute top-0 bottom-0 w-1 bg-amber-400 shadow-[0_0_15px_rgba(234,179,8,0.8)] z-10 cursor-ew-resize flex items-center justify-center"
                         style={{ left: `${sliderPos}%` }}
                       >
-                        <div className="w-8 h-8 rounded-full bg-white text-slate-900 shadow-xl flex items-center justify-center -ml-3.5 border-2 border-blue-500">
-                          <ArrowRightLeft size={14} className="text-blue-600" />
+                        <div className="w-8 h-8 rounded-full bg-[#07080c] text-amber-400 shadow-xl flex items-center justify-center -ml-3.5 border-2 border-amber-400">
+                          <ArrowRightLeft size={14} className="text-amber-400" />
                         </div>
                       </div>
 
@@ -145,17 +145,17 @@ export default function BeforeAfterShowcase() {
 
                     {/* Footer Info */}
                     <div className="p-5 space-y-3">
-                      <p className="text-slate-600 dark:text-slate-300 text-xs leading-relaxed">
+                      <p className="text-slate-300 text-xs leading-relaxed">
                         {item.description}
                       </p>
-                      <div className="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs">
-                        <div className="flex items-center gap-1.5 text-slate-500">
-                          <CheckCircle2 size={13} className="text-teal-500" />
-                          <span>Treatment: <strong>{item.treatment}</strong></span>
+                      <div className="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-amber-500/20 text-xs">
+                        <div className="flex items-center gap-1.5 text-slate-400">
+                          <CheckCircle2 size={13} className="text-amber-400" />
+                          <span>Treatment: <strong className="text-white">{item.treatment}</strong></span>
                         </div>
-                        <div className="flex items-center gap-1.5 text-slate-500">
-                          <Sparkles size={13} className="text-blue-500" />
-                          <span>Duration: <strong>{item.duration}</strong></span>
+                        <div className="flex items-center gap-1.5 text-slate-400">
+                          <Sparkles size={13} className="text-amber-400" />
+                          <span>Duration: <strong className="text-white">{item.duration}</strong></span>
                         </div>
                       </div>
                     </div>
@@ -181,3 +181,4 @@ export default function BeforeAfterShowcase() {
     </section>
   );
 }
+

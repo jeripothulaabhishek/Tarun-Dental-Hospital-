@@ -21,7 +21,7 @@ export default function FAQSection() {
   return (
     <section
       ref={ref}
-      className="section bg-white dark:bg-slate-900"
+      className="section bg-[#07080c] relative overflow-hidden"
       id="faq"
       aria-label="Frequently asked questions"
     >
@@ -29,7 +29,7 @@ export default function FAQSection() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <div className="container">
+      <div className="container relative z-10">
         <SectionHeader
           label="FAQ"
           title="Frequently Asked "
@@ -48,19 +48,19 @@ export default function FAQSection() {
             {homeFaqs.map((faq) => (
               <motion.div key={faq.id} variants={staggerItem}>
                 <div
-                  className="bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden"
+                  className="bg-[#0f1118] rounded-xl border border-amber-500/20 overflow-hidden"
                 >
                   <button
                     onClick={() => setOpenId(openId === faq.id ? null : faq.id)}
-                    className="flex items-center justify-between w-full p-5 text-left hover:bg-slate-100 dark:hover:bg-slate-750 transition-colors"
+                    className="flex items-center justify-between w-full p-5 text-left hover:bg-[#161924] transition-colors"
                     aria-expanded={openId === faq.id}
                     id={`faq-btn-${faq.id}`}
                     aria-controls={`faq-panel-${faq.id}`}
                   >
-                    <span className="font-semibold text-slate-800 dark:text-slate-200 text-sm pr-4">
+                    <span className="font-semibold text-white text-sm pr-4">
                       {faq.question}
                     </span>
-                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-950/40 flex items-center justify-center text-blue-600">
+                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400">
                       {openId === faq.id ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
                     </span>
                   </button>
@@ -73,7 +73,7 @@ export default function FAQSection() {
                     transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                     style={{ overflow: "hidden" }}
                   >
-                    <p className="px-5 pb-5 text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                    <p className="px-5 pb-5 text-slate-300 text-sm leading-relaxed border-t border-amber-500/10 pt-3">
                       {faq.answer}
                     </p>
                   </motion.div>
@@ -90,7 +90,7 @@ export default function FAQSection() {
           >
             <a
               href="/faq"
-              className="text-blue-600 hover:text-blue-700 font-semibold text-sm inline-flex items-center gap-1.5"
+              className="text-amber-400 hover:text-amber-300 font-semibold text-sm inline-flex items-center gap-1.5"
             >
               View All FAQs
               <ChevronDown size={14} className="-rotate-90" />
@@ -101,3 +101,4 @@ export default function FAQSection() {
     </section>
   );
 }
+

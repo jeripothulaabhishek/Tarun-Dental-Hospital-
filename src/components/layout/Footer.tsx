@@ -18,36 +18,36 @@ import { useAppointmentModal } from "@/components/layout/AppointmentModal";
 export default function Footer() {
   const whatsappUrl = getWhatsAppUrl(SITE.whatsapp, SITE.whatsappMessage);
   const { openModal } = useAppointmentModal();
-  const year = 2026; // Hardcoded to match build/compile year for hydration stability
+  const year = 2026;
 
   return (
     <footer
-      className="bg-slate-900 dark:bg-[#060c1a] text-white"
+      className="bg-[#050507] text-white border-t border-amber-500/20"
       role="contentinfo"
       aria-label="Site footer"
     >
       {/* ─── Top CTA Strip ─── */}
-      <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-teal-600">
+      <div className="bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-600 text-[#07080c]">
         <div className="container py-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <p className="text-lg font-bold text-white">
+              <p className="text-lg font-extrabold text-[#07080c]">
                 Ready to Transform Your Smile?
               </p>
-              <p className="text-blue-100 text-sm mt-0.5">
+              <p className="text-[#07080c]/80 text-sm font-medium mt-0.5">
                 Book your free consultation today — no obligation
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
               <button
                 onClick={() => openModal()}
-                className="btn-white text-sm cursor-pointer"
+                className="px-6 py-3 rounded-full bg-[#07080c] text-amber-400 font-bold text-sm hover:bg-[#12141d] transition-all shadow-lg flex items-center gap-2 cursor-pointer"
               >
                 <Calendar size={15} />
                 Book Appointment
               </button>
-              <a href={`tel:${SITE.phoneRaw}`} className="btn-white text-sm">
-                <Phone size={15} />
+              <a href={`tel:${SITE.phoneRaw}`} className="px-6 py-3 rounded-full bg-[#07080c]/90 text-white font-bold text-sm hover:bg-[#07080c] transition-all shadow-md flex items-center gap-2">
+                <Phone size={15} className="text-amber-400" />
                 Call Now
               </a>
               <a
@@ -70,29 +70,29 @@ export default function Footer() {
           {/* Column 1 — Brand */}
           <div className="space-y-5">
             <Link href="/" className="flex items-center gap-2.5" aria-label="Home">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-teal-400 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-300 via-amber-500 to-yellow-600 flex items-center justify-center shadow-[0_0_15px_rgba(234,179,8,0.3)]">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path
                     d="M12 2C8.5 2 6 4.5 6 7c0 1.5.6 2.8 1.5 3.8C6.8 12 6 14 6 16c0 2.2 1.3 4 3 4.7V21a1 1 0 002 0v-.3c1.7-.7 3-2.5 3-4.7 0-2-.8-4-1.5-5.2C13.4 9.8 14 8.5 14 7c0-2.5-2.5-5-2-5z"
-                    fill="white"
+                    fill="#07080c"
                   />
                 </svg>
               </div>
               <div>
-                <div className="font-bold text-white text-base" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
+                <div className="font-bold text-amber-400 text-base" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
                   Tarun Dental Hospital
                 </div>
-                <div className="text-slate-400 text-[10px]">
+                <div className="text-amber-300/70 text-[10px] tracking-wide">
                   Pragathi Nagar, Hyderabad
                 </div>
               </div>
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed">
+            <p className="text-slate-300 text-sm leading-relaxed">
               Advanced painless dental care with world-class technology. 
               Serving Hyderabad with pride for {SITE.yearsExperience}+ years.
             </p>
             {/* Google Rating */}
-            <div className="flex items-center gap-2 bg-slate-800 dark:bg-slate-800/60 rounded-xl p-3 w-fit">
+            <div className="flex items-center gap-2 bg-[#0f1118] border border-amber-500/20 rounded-xl p-3 w-fit">
               <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
                 <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
@@ -104,7 +104,7 @@ export default function Footer() {
                   <span className="text-white font-bold text-sm">{SITE.googleRating}</span>
                   <StarRating rating={5} size={11} />
                 </div>
-                <p className="text-slate-400 text-[10px]">{SITE.reviewCount.toLocaleString()}+ reviews</p>
+                <p className="text-amber-300/80 text-[10px]">{SITE.reviewCount.toLocaleString()}+ reviews</p>
               </div>
             </div>
             {/* Socials */}
@@ -121,7 +121,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 rounded-lg bg-slate-800 hover:bg-blue-600 flex items-center justify-center text-slate-400 hover:text-white transition-all duration-200"
+                  className="w-9 h-9 rounded-lg bg-[#0f1118] border border-amber-500/20 hover:border-amber-400 hover:bg-amber-400 hover:text-[#07080c] flex items-center justify-center text-amber-400 transition-all duration-200"
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d={path} />
@@ -133,7 +133,7 @@ export default function Footer() {
 
           {/* Column 2 — Quick Links */}
           <div>
-            <h3 className="text-white font-semibold text-sm mb-4 tracking-wide uppercase">
+            <h3 className="text-amber-400 font-semibold text-xs mb-4 tracking-wider uppercase">
               Quick Links
             </h3>
             <ul className="space-y-2.5">
@@ -141,9 +141,9 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="flex items-center gap-1.5 text-slate-400 hover:text-blue-400 text-sm transition-colors"
+                    className="flex items-center gap-1.5 text-slate-300 hover:text-amber-400 text-sm transition-colors"
                   >
-                    <ChevronRight size={13} />
+                    <ChevronRight size={13} className="text-amber-400" />
                     {link.label}
                   </Link>
                 </li>
@@ -151,9 +151,9 @@ export default function Footer() {
               <li>
                 <Link
                   href="/faq"
-                  className="flex items-center gap-1.5 text-slate-400 hover:text-blue-400 text-sm transition-colors"
+                  className="flex items-center gap-1.5 text-slate-300 hover:text-amber-400 text-sm transition-colors"
                 >
-                  <ChevronRight size={13} />
+                  <ChevronRight size={13} className="text-amber-400" />
                   FAQ
                 </Link>
               </li>
@@ -162,7 +162,7 @@ export default function Footer() {
 
           {/* Column 3 — Treatments */}
           <div>
-            <h3 className="text-white font-semibold text-sm mb-4 tracking-wide uppercase">
+            <h3 className="text-amber-400 font-semibold text-xs mb-4 tracking-wider uppercase">
               Treatments
             </h3>
             <ul className="space-y-2.5">
@@ -178,9 +178,9 @@ export default function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="flex items-center gap-1.5 text-slate-400 hover:text-blue-400 text-sm transition-colors"
+                    className="flex items-center gap-1.5 text-slate-300 hover:text-amber-400 text-sm transition-colors"
                   >
-                    <ChevronRight size={13} />
+                    <ChevronRight size={13} className="text-amber-400" />
                     {item.label}
                   </Link>
                 </li>
@@ -190,21 +190,21 @@ export default function Footer() {
 
           {/* Column 4 — Contact */}
           <div>
-            <h3 className="text-white font-semibold text-sm mb-4 tracking-wide uppercase">
+            <h3 className="text-amber-400 font-semibold text-xs mb-4 tracking-wider uppercase">
               Contact Info
             </h3>
             <ul className="space-y-4">
               <li>
                 <a
                   href={`tel:${SITE.phoneRaw}`}
-                  className="flex gap-3 text-slate-400 hover:text-white transition-colors group"
+                  className="flex gap-3 text-slate-300 hover:text-amber-400 transition-colors group"
                   aria-label={`Call ${SITE.phone}`}
                 >
-                  <div className="w-8 h-8 rounded-lg bg-slate-800 group-hover:bg-blue-600 flex items-center justify-center flex-shrink-0 transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-[#0f1118] border border-amber-500/20 group-hover:border-amber-400 group-hover:bg-amber-400 group-hover:text-[#07080c] flex items-center justify-center flex-shrink-0 transition-colors text-amber-400">
                     <Phone size={14} />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-500 mb-0.5">Phone</p>
+                    <p className="text-xs text-slate-400 mb-0.5">Phone</p>
                     <p className="text-sm font-medium">{SITE.phone}</p>
                   </div>
                 </a>
@@ -212,32 +212,32 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${SITE.email}`}
-                  className="flex gap-3 text-slate-400 hover:text-white transition-colors group"
+                  className="flex gap-3 text-slate-300 hover:text-amber-400 transition-colors group"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-slate-800 group-hover:bg-blue-600 flex items-center justify-center flex-shrink-0 transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-[#0f1118] border border-amber-500/20 group-hover:border-amber-400 group-hover:bg-amber-400 group-hover:text-[#07080c] flex items-center justify-center flex-shrink-0 transition-colors text-amber-400">
                     <Mail size={14} />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-500 mb-0.5">Email</p>
+                    <p className="text-xs text-slate-400 mb-0.5">Email</p>
                     <p className="text-sm font-medium">{SITE.email}</p>
                   </div>
                 </a>
               </li>
-              <li className="flex gap-3 text-slate-400">
-                <div className="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center flex-shrink-0">
+              <li className="flex gap-3 text-slate-300">
+                <div className="w-8 h-8 rounded-lg bg-[#0f1118] border border-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0">
                   <MapPin size={14} />
                 </div>
                 <div>
-                  <p className="text-xs text-slate-500 mb-0.5">Address</p>
+                  <p className="text-xs text-slate-400 mb-0.5">Address</p>
                   <p className="text-sm font-medium">{SITE.address.full}</p>
                 </div>
               </li>
-              <li className="flex gap-3 text-slate-400">
-                <div className="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center flex-shrink-0">
+              <li className="flex gap-3 text-slate-300">
+                <div className="w-8 h-8 rounded-lg bg-[#0f1118] border border-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0">
                   <Clock size={14} />
                 </div>
                 <div>
-                  <p className="text-xs text-slate-500 mb-0.5">Hours</p>
+                  <p className="text-xs text-slate-400 mb-0.5">Hours</p>
                   <p className="text-sm">Mon–Fri: {SITE.hours.weekday}</p>
                   <p className="text-sm">Sat: {SITE.hours.saturday}</p>
                   <p className="text-sm">Sun: {SITE.hours.sunday}</p>
@@ -249,20 +249,20 @@ export default function Footer() {
       </div>
 
       {/* ─── Bottom Bar ─── */}
-      <div className="border-t border-slate-800">
+      <div className="border-t border-amber-500/20 bg-[#030305]">
         <div className="container py-5">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
             <p>
               © {year} {SITE.name}. All rights reserved. Made with ❤️ in Hyderabad.
             </p>
             <div className="flex items-center gap-4">
-              <Link href="/privacy-policy" className="hover:text-slate-300 transition-colors">
+              <Link href="/privacy-policy" className="hover:text-amber-400 transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="hover:text-slate-300 transition-colors">
+              <Link href="/terms" className="hover:text-amber-400 transition-colors">
                 Terms of Service
               </Link>
-              <Link href="/sitemap.xml" className="hover:text-slate-300 transition-colors">
+              <Link href="/sitemap.xml" className="hover:text-amber-400 transition-colors">
                 Sitemap
               </Link>
             </div>
@@ -272,3 +272,4 @@ export default function Footer() {
     </footer>
   );
 }
+

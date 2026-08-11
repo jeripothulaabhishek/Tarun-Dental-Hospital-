@@ -16,17 +16,17 @@ export default function AppointmentCTA() {
   return (
     <section
       ref={ref}
-      className="relative py-20 overflow-hidden"
+      className="relative py-20 overflow-hidden bg-[#07080c] border-y border-amber-500/20"
       aria-label="Book appointment call to action"
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-teal-600" />
+      {/* Background Radial Glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(234,179,8,0.15),transparent_70%)]" />
       <div
-        className="orb w-[500px] h-[500px] bg-white/5 -top-32 -right-32"
+        className="orb w-[500px] h-[500px] bg-amber-500/10 -top-32 -right-32 blur-[130px]"
         aria-hidden="true"
       />
       <div
-        className="orb w-[300px] h-[300px] bg-teal-300/10 -bottom-20 -left-20"
+        className="orb w-[300px] h-[300px] bg-yellow-600/10 -bottom-20 -left-20 blur-[110px]"
         aria-hidden="true"
       />
 
@@ -37,10 +37,10 @@ export default function AppointmentCTA() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center"
         >
-          <p className="section-label justify-center text-blue-200">
-            <span className="w-6 h-px bg-blue-200 inline-block" aria-hidden="true" />
+          <p className="section-label justify-center text-amber-400">
+            <span className="w-6 h-px bg-amber-400 inline-block" aria-hidden="true" />
             Take Action Now
-            <span className="w-6 h-px bg-blue-200 inline-block" aria-hidden="true" />
+            <span className="w-6 h-px bg-amber-400 inline-block" aria-hidden="true" />
           </p>
 
           <h2
@@ -50,10 +50,10 @@ export default function AppointmentCTA() {
               fontSize: "clamp(2rem, 5vw, 3.5rem)",
             }}
           >
-            Ready for Your Perfect Smile?
+            Ready for Your <span className="bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-500 bg-clip-text text-transparent">Perfect Smile?</span>
           </h2>
 
-          <p className="text-blue-100 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
+          <p className="text-slate-300 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
             Book a free consultation today. No obligation, no waiting. 
             Start your smile journey in just one click.
           </p>
@@ -61,7 +61,7 @@ export default function AppointmentCTA() {
           <div className="flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={() => openModal()}
-              className="btn-white text-base cursor-pointer"
+              className="btn-primary text-base cursor-pointer px-8 py-4 rounded-full"
               id="cta-book-appointment"
             >
               <Calendar size={18} />
@@ -72,29 +72,29 @@ export default function AppointmentCTA() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2.5 px-7 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-semibold rounded-full transition-all duration-200 text-base"
+              className="flex items-center gap-2.5 px-7 py-4 bg-green-950/40 hover:bg-green-900/50 backdrop-blur-sm border border-green-500/40 text-green-300 font-semibold rounded-full transition-all duration-200 text-base shadow-md"
             >
               <MessageCircle size={18} />
               WhatsApp Us
             </a>
             <a
               href={`tel:${SITE.phoneRaw}`}
-              className="flex items-center gap-2.5 px-7 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-semibold rounded-full transition-all duration-200 text-base"
+              className="flex items-center gap-2.5 px-7 py-4 bg-[#0f1118] hover:bg-[#161924] backdrop-blur-sm border border-amber-500/30 text-amber-300 font-semibold rounded-full transition-all duration-200 text-base shadow-md"
             >
-              <Phone size={18} />
+              <Phone size={18} className="text-amber-400" />
               {SITE.phone}
             </a>
           </div>
 
           {/* Trust badges */}
-          <div className="flex flex-wrap items-center justify-center gap-6 mt-10 pt-8 border-t border-white/20">
+          <div className="flex flex-wrap items-center justify-center gap-6 mt-10 pt-8 border-t border-amber-500/20">
             {[
               "✓ Free Initial Consultation",
               "✓ No Hidden Costs",
               "✓ Flexible EMI Available",
               "✓ Insurance Accepted",
             ].map((badge) => (
-              <span key={badge} className="text-blue-100 text-sm font-medium">
+              <span key={badge} className="text-amber-300 text-sm font-medium">
                 {badge}
               </span>
             ))}
@@ -104,3 +104,4 @@ export default function AppointmentCTA() {
     </section>
   );
 }
+
