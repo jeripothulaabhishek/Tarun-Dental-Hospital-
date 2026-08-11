@@ -96,7 +96,6 @@ export default function RootLayout({
         <ThemeProvider>
           <AppointmentModalProvider>
             <ScrollProgress />
-            <TopAnnouncementBar />
             <Navbar />
             <main id="main-content" role="main">
               {children}
