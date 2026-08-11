@@ -18,15 +18,16 @@ export default function ContactPage() {
   const whatsappUrl = getWhatsAppUrl(SITE.whatsapp, SITE.whatsappMessage);
 
   return (
-    <main className="pt-20">
+    <main className="pt-20 bg-[#07080c]">
       {/* Hero */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-[#0f2460] to-[#0a4d40]">
-        <div className="container text-center">
+      <section className="py-20 bg-[#07080c] border-b border-amber-500/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(234,179,8,0.12),transparent_70%)]" />
+        <div className="container text-center relative z-10">
           <AnimatedSection>
             <h1 className="text-white font-black mb-4" style={{ fontFamily: "var(--font-plus-jakarta)", fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
-              Book Your <span className="gradient-text-hero">Appointment</span>
+              Book Your <span className="bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-500 bg-clip-text text-transparent">Appointment</span>
             </h1>
-            <p className="text-blue-100 text-lg max-w-xl mx-auto">
+            <p className="text-slate-300 text-lg max-w-xl mx-auto">
               Reach out to us via phone, WhatsApp, email, or fill out the form below.
               We confirm appointments within 30 minutes.
             </p>
@@ -34,23 +35,17 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="section bg-slate-50 dark:bg-slate-950">
-        <div className="container">
+      <section className="section bg-[#07080c] relative overflow-hidden">
+        <div className="container relative z-10">
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Contact Info Cards */}
             <div className="space-y-4">
               {[
-                { Icon: Phone, label: "Phone", value: SITE.phone, href: `tel:${SITE.phoneRaw}`, color: "blue" as const, external: false },
-                { Icon: MessageCircle, label: "WhatsApp", value: "Chat with us", href: whatsappUrl, color: "green" as const, external: true },
-                { Icon: Mail, label: "Email", value: SITE.email, href: `mailto:${SITE.email}`, color: "purple" as const, external: false },
-                { Icon: MapPin, label: "Address", value: SITE.address.full, href: SITE.mapsDirections, color: "teal" as const, external: true },
-              ].map(({ Icon, label, value, href, color, external }) => {
-                const styles = {
-                  blue: { bg: "bg-blue-50 dark:bg-blue-950/20", text: "text-blue-600" },
-                  green: { bg: "bg-green-50 dark:bg-green-950/20", text: "text-green-600" },
-                  purple: { bg: "bg-purple-50 dark:bg-purple-950/20", text: "text-purple-600" },
-                  teal: { bg: "bg-teal-50 dark:bg-teal-950/20", text: "text-teal-600" },
-                }[color];
+                { Icon: Phone, label: "Phone", value: SITE.phone, href: `tel:${SITE.phoneRaw}`, external: false },
+                { Icon: MessageCircle, label: "WhatsApp", value: "Chat with us", href: whatsappUrl, external: true },
+                { Icon: Mail, label: "Email", value: SITE.email, href: `mailto:${SITE.email}`, external: false },
+                { Icon: MapPin, label: "Address", value: SITE.address.full, href: SITE.mapsDirections, external: true },
+              ].map(({ Icon, label, value, href, external }) => {
                 return (
                   <AnimatedSection key={label}>
                     <a
@@ -59,13 +54,13 @@ export default function ContactPage() {
                       rel={external ? "noopener noreferrer" : undefined}
                       className="block group"
                     >
-                      <Card variant="default" hoverEffect="lift" className="flex gap-4 p-5">
-                        <div className={`w-12 h-12 rounded-xl ${styles.bg} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}>
-                          <Icon size={20} className={styles.text} />
+                      <Card variant="default" hoverEffect="lift" className="flex gap-4 p-5 bg-[#0f1118] border border-amber-500/20 hover:border-amber-500/40">
+                        <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform text-amber-400">
+                          <Icon size={20} />
                         </div>
                         <div>
-                          <p className="text-xs text-slate-400 mb-0.5 uppercase tracking-wide">{label}</p>
-                          <p className="font-semibold text-slate-800 dark:text-slate-200 text-sm">{value}</p>
+                          <p className="text-xs text-amber-400/80 mb-0.5 uppercase tracking-wide font-mono">{label}</p>
+                          <p className="font-semibold text-white text-sm">{value}</p>
                         </div>
                       </Card>
                     </a>
@@ -75,25 +70,25 @@ export default function ContactPage() {
 
               {/* Hours */}
               <AnimatedSection>
-                <Card variant="default" className="p-5">
+                <Card variant="default" className="p-5 bg-[#0f1118] border border-amber-500/20">
                   <div className="flex gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-yellow-50 dark:bg-yellow-950/20 flex items-center justify-center flex-shrink-0">
-                      <Clock size={20} className="text-yellow-600" />
+                    <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/25 flex items-center justify-center flex-shrink-0 text-amber-400">
+                      <Clock size={20} />
                     </div>
                     <div className="flex-1">
-                      <p className="text-xs text-slate-400 mb-2 uppercase tracking-wide">Clinic Hours</p>
+                      <p className="text-xs text-amber-400/80 mb-2 uppercase tracking-wide font-mono">Clinic Hours</p>
                       <div className="space-y-1 text-sm">
                         <div className="flex justify-between">
-                          <span className="text-slate-500">Mon – Fri</span>
-                          <span className="font-semibold text-slate-700 dark:text-slate-300">{SITE.hours.weekday}</span>
+                          <span className="text-slate-400">Mon – Fri</span>
+                          <span className="font-semibold text-slate-200">{SITE.hours.weekday}</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-slate-500">Saturday</span>
-                          <span className="font-semibold text-slate-700 dark:text-slate-300">{SITE.hours.saturday}</span>
+                          <span className="text-slate-400">Saturday</span>
+                          <span className="font-semibold text-slate-200">{SITE.hours.saturday}</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-slate-500">Sunday</span>
-                          <span className="font-semibold text-slate-700 dark:text-slate-300">{SITE.hours.sunday}</span>
+                          <span className="text-slate-400">Sunday</span>
+                          <span className="font-semibold text-slate-200">{SITE.hours.sunday}</span>
                         </div>
                       </div>
                     </div>
@@ -104,11 +99,11 @@ export default function ContactPage() {
 
             {/* Appointment Form */}
             <AnimatedSection delay={0.2} className="lg:col-span-2">
-              <Card variant="default" className="p-8">
-                <h2 className="font-bold text-slate-900 dark:text-white text-2xl mb-2" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
+              <Card variant="default" className="p-8 bg-[#0f1118] border border-amber-500/20 shadow-xl">
+                <h2 className="font-bold text-white text-2xl mb-2" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
                   Request an Appointment
                 </h2>
-                <p className="text-slate-500 text-sm mb-6">
+                <p className="text-slate-300 text-sm mb-6">
                   Fill out the form below and we&apos;ll confirm your appointment within 30 minutes.
                 </p>
                 <AppointmentForm />
@@ -118,7 +113,7 @@ export default function ContactPage() {
 
           {/* Map */}
           <AnimatedSection className="mt-8">
-            <Card variant="default" className="p-0 overflow-hidden h-64 md:h-80">
+            <Card variant="default" className="p-0 overflow-hidden h-64 md:h-80 border border-amber-500/20 bg-[#0f1118]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.2!2d78.3985!3d17.4978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sTarun+Dental+Hospital!5e0!3m2!1sen!2sin!4v1000000"
                 width="100%"
@@ -136,3 +131,4 @@ export default function ContactPage() {
     </main>
   );
 }
+
