@@ -95,13 +95,13 @@ export default function AppointmentForm({ compact = false }: AppointmentFormProp
   }
 
   const inputClass = (hasError?: boolean) =>
-    `w-full px-4 py-3 rounded-xl border text-sm transition-all duration-200 bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 ${
+    `w-full px-4 py-3 rounded-xl border text-sm transition-all duration-200 bg-[#07080c] text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 ${
       hasError
-        ? "border-red-300 focus:ring-red-200 dark:border-red-700"
-        : "border-slate-200 dark:border-slate-700 focus:ring-blue-100 dark:focus:ring-blue-900 focus:border-blue-400"
+        ? "border-red-500 focus:ring-red-500/20"
+        : "border-amber-500/30 focus:ring-[#f9db8d]/20 focus:border-[#f9db8d]"
     }`;
 
-  const labelClass = "block text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wide mb-1.5";
+  const labelClass = "block text-xs font-semibold text-[#f9db8d] uppercase tracking-wide mb-1.5 font-mono";
 
   return (
     <form
@@ -185,12 +185,12 @@ export default function AppointmentForm({ compact = false }: AppointmentFormProp
           {...register("service")}
           className={inputClass(!!errors.service)}
         >
-          <option value="">Select a treatment</option>
+          <option value="" className="bg-[#07080c]">Select a treatment</option>
           {services.map((s) => (
-            <option key={s.id} value={s.title}>{s.title}</option>
+            <option key={s.id} value={s.title} className="bg-[#07080c]">{s.title}</option>
           ))}
-          <option value="General Checkup">General Check-up / Cleaning</option>
-          <option value="Other">Other / Not Sure</option>
+          <option value="General Checkup" className="bg-[#07080c]">General Check-up / Cleaning</option>
+          <option value="Other" className="bg-[#07080c]">Other / Not Sure</option>
         </select>
         {errors.service && (
           <p className="text-red-500 text-xs mt-1" role="alert">{errors.service.message}</p>
@@ -220,11 +220,11 @@ export default function AppointmentForm({ compact = false }: AppointmentFormProp
               Preferred Time
             </label>
             <select id="appt-time" {...register("preferredTime")} className={inputClass()}>
-              <option value="">Any time</option>
-              <option>9:00 AM – 11:00 AM</option>
-              <option>11:00 AM – 1:00 PM</option>
-              <option>2:00 PM – 5:00 PM</option>
-              <option>5:00 PM – 8:00 PM</option>
+              <option value="" className="bg-[#07080c]">Any time</option>
+              <option className="bg-[#07080c]">9:00 AM – 11:00 AM</option>
+              <option className="bg-[#07080c]">11:00 AM – 1:00 PM</option>
+              <option className="bg-[#07080c]">2:00 PM – 5:00 PM</option>
+              <option className="bg-[#07080c]">5:00 PM – 8:00 PM</option>
             </select>
           </div>
         </div>
@@ -253,7 +253,7 @@ export default function AppointmentForm({ compact = false }: AppointmentFormProp
       )}
 
       {formError && (
-        <p className="text-red-500 text-xs text-center font-semibold bg-red-50 dark:bg-red-950/20 p-2.5 rounded-lg border border-red-200 dark:border-red-800" role="alert">
+        <p className="text-red-500 text-xs text-center font-semibold bg-red-950/30 p-2.5 rounded-lg border border-red-500/30" role="alert">
           {formError}
         </p>
       )}
@@ -262,7 +262,7 @@ export default function AppointmentForm({ compact = false }: AppointmentFormProp
       <button
         type="submit"
         disabled={submitting}
-        className="btn-primary w-full py-3.5 rounded-xl justify-center disabled:opacity-70 disabled:cursor-not-allowed"
+        className="btn-primary w-full py-3.5 rounded-xl justify-center disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
         style={{ borderRadius: "0.75rem" }}
         id="appt-submit"
       >
@@ -281,7 +281,7 @@ export default function AppointmentForm({ compact = false }: AppointmentFormProp
 
       <p className="text-center text-xs text-slate-400">
         By booking, you agree to our{" "}
-        <a href="/privacy-policy" className="underline hover:text-blue-600">Privacy Policy</a>.
+        <a href="/privacy-policy" className="underline hover:text-[#f9db8d] transition-colors">Privacy Policy</a>.
         We&apos;ll confirm within 30 minutes.
       </p>
     </form>

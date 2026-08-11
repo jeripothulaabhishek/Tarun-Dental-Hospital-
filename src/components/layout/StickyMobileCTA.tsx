@@ -11,24 +11,24 @@ export default function StickyMobileCTA() {
 
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 safe-area-bottom"
+      className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-[#07080c]/95 backdrop-blur-xl border-t border-amber-500/20 safe-area-bottom shadow-[0_-5px_25px_rgba(0,0,0,0.8)]"
       role="complementary"
       aria-label="Quick contact actions"
     >
-      <div className="grid grid-cols-3 divide-x divide-slate-200 dark:divide-slate-800">
+      <div className="grid grid-cols-3 divide-x divide-amber-500/20">
         <a
           href={`tel:${SITE.phoneRaw}`}
-          className="flex flex-col items-center gap-1 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-colors"
+          className="flex flex-col items-center gap-1 py-3 text-slate-300 hover:text-[#f9db8d] transition-colors"
           aria-label={`Call ${SITE.phone}`}
         >
-          <Phone size={20} />
+          <Phone size={20} className="text-[#f9db8d]" />
           <span className="text-[10px] font-semibold tracking-wide">CALL</span>
         </a>
         <a
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center gap-1 py-3 text-slate-600 dark:text-slate-400 hover:text-green-600 transition-colors"
+          className="flex flex-col items-center gap-1 py-3 text-green-400 hover:text-green-300 transition-colors"
           aria-label="Chat on WhatsApp"
         >
           <MessageCircle size={20} />
@@ -36,13 +36,14 @@ export default function StickyMobileCTA() {
         </a>
         <button
           onClick={() => openModal()}
-          className="flex flex-col items-center justify-center gap-1 py-3 bg-gradient-to-r from-blue-600 to-teal-500 text-white cursor-pointer"
+          className="flex flex-col items-center justify-center gap-1 py-3 bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-600 text-[#07080c] font-bold cursor-pointer"
           aria-label="Book appointment"
         >
           <Calendar size={20} />
-          <span className="text-[10px] font-semibold tracking-wide">BOOK</span>
+          <span className="text-[10px] font-extrabold tracking-wide">BOOK</span>
         </button>
       </div>
     </div>
   );
 }
+

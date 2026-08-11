@@ -59,86 +59,87 @@ export default async function BlogPostPage({ params }: Props) {
   const related = blogPosts.filter((p) => p.id !== post.id && p.category === post.category).slice(0, 3);
 
   return (
-    <main className="pt-20">
+    <main className="pt-20 bg-[#07080c]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
 
       {/* Hero */}
-      <section className="py-16 bg-gradient-to-br from-slate-900 via-[#0f2460] to-[#0a4d40]">
-        <div className="container max-w-3xl">
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-blue-300 mb-6">
-            <Link href="/" className="hover:text-white">Home</Link>
-            <ChevronRight size={12} />
-            <Link href="/blog" className="hover:text-white">Blog</Link>
-            <ChevronRight size={12} />
-            <span className="text-white truncate max-w-[200px]">{post.title}</span>
+      <section className="py-16 bg-[#07080c] border-b border-amber-500/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(234,179,8,0.12),transparent_70%)]" />
+        <div className="container max-w-3xl relative z-10">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-slate-400 mb-6">
+            <Link href="/" className="hover:text-[#f9db8d] transition-colors">Home</Link>
+            <ChevronRight size={12} className="text-[#f9db8d]" />
+            <Link href="/blog" className="hover:text-[#f9db8d] transition-colors">Blog</Link>
+            <ChevronRight size={12} className="text-[#f9db8d]" />
+            <span className="text-[#f9db8d] font-semibold truncate max-w-[200px]">{post.title}</span>
           </nav>
           <AnimatedSection>
             <span className="badge badge-primary mb-4 inline-flex">{post.category}</span>
             <h1 className="text-white font-black mb-4 leading-tight" style={{ fontFamily: "var(--font-plus-jakarta)", fontSize: "clamp(1.75rem, 4vw, 3rem)" }}>
               {post.title}
             </h1>
-            <div className="flex flex-wrap items-center gap-4 text-blue-200 text-sm">
-              <span className="flex items-center gap-1.5"><User size={14} />{post.author}</span>
-              <span className="flex items-center gap-1.5"><Calendar size={14} />{formatDate(post.publishedAt)}</span>
-              <span className="flex items-center gap-1.5"><Clock size={14} />{post.readingTime}</span>
+            <div className="flex flex-wrap items-center gap-4 text-slate-300 text-sm">
+              <span className="flex items-center gap-1.5"><User size={14} className="text-[#f9db8d]" />{post.author}</span>
+              <span className="flex items-center gap-1.5"><Calendar size={14} className="text-[#f9db8d]" />{formatDate(post.publishedAt)}</span>
+              <span className="flex items-center gap-1.5"><Clock size={14} className="text-[#f9db8d]" />{post.readingTime}</span>
             </div>
           </AnimatedSection>
         </div>
       </section>
 
       {/* Content */}
-      <section className="section bg-white dark:bg-slate-900">
-        <div className="container max-w-3xl">
+      <section className="section bg-[#07080c] relative overflow-hidden">
+        <div className="container max-w-3xl relative z-10">
           <AnimatedSection>
-            <article className="prose prose-slate dark:prose-invert max-w-none">
-              <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-8 font-medium border-l-4 border-blue-500 pl-4">
+            <article className="prose prose-invert max-w-none">
+              <p className="text-xl text-slate-200 leading-relaxed mb-8 font-medium border-l-4 border-[#f9db8d] pl-4 bg-[#0f1118] p-4 rounded-r-xl border-amber-500/30">
                 {post.excerpt}
               </p>
-              <div className="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+              <div className="text-slate-300 leading-relaxed space-y-4">
                 <p>{post.content}</p>
                 <p>
-                  At Tarun Dental Hospital in Pragathi Nagar, Hyderabad, we specialize in {post.category.toLowerCase()} 
+                  At Tarun Dental Hospital in Pragathi Nagar, Hyderabad, we specialize in {post.category.toLowerCase()}{" "}
                   treatment using the latest technology and techniques. Our experienced team led by Dr. Tarun Kumar 
                   ensures you receive world-class care in a comfortable, patient-friendly environment.
                 </p>
                 <p>
                   If you&apos;d like to learn more or book a consultation, don&apos;t hesitate to{" "}
-                  <Link href="/contact" className="text-blue-600 font-semibold hover:underline">contact us</Link>.
+                  <Link href="/contact" className="text-[#f9db8d] font-semibold hover:underline">contact us</Link>.
                   Our team is always happy to answer your questions and help you achieve your perfect smile.
                 </p>
               </div>
             </article>
 
             {/* Tags */}
-            <div className="flex flex-wrap gap-2 mt-8 pt-8 border-t border-slate-200 dark:border-slate-700">
+            <div className="flex flex-wrap gap-2 mt-8 pt-8 border-t border-amber-500/20">
               {post.tags.map((tag) => (
-                <span key={tag} className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs rounded-full">
+                <span key={tag} className="px-3 py-1 bg-amber-500/10 border border-amber-500/25 text-[#f9db8d] text-xs rounded-full font-mono">
                   #{tag}
                 </span>
               ))}
             </div>
 
             {/* CTA */}
-            <Card variant="glass" className="mt-10 p-6 bg-gradient-to-r from-blue-600 to-teal-500 border-0 text-white text-center rounded-2xl shadow-none">
-              <h3 className="font-bold text-xl mb-2 text-white">Ready to Transform Your Smile?</h3>
-              <p className="text-blue-100 text-sm mb-4">Book a free consultation at Tarun Dental Hospital today.</p>
-              <Button href="/contact" variant="white" className="text-sm">Book Free Appointment</Button>
+            <Card variant="glass" className="mt-10 p-8 bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-600 border-0 text-[#07080c] text-center rounded-2xl shadow-xl">
+              <h3 className="font-extrabold text-2xl mb-2 text-[#07080c]" style={{ fontFamily: "var(--font-plus-jakarta)" }}>Ready to Transform Your Smile?</h3>
+              <p className="text-[#07080c]/80 text-sm font-semibold mb-5">Book a free consultation at Tarun Dental Hospital today.</p>
+              <Button href="/contact" variant="white" className="text-sm bg-[#07080c] text-white hover:text-[#f9db8d]">Book Free Appointment</Button>
             </Card>
           </AnimatedSection>
 
           {/* Related Posts */}
           {related.length > 0 && (
             <div className="mt-12">
-              <h2 className="font-bold text-slate-900 dark:text-white text-xl mb-5" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
+              <h2 className="font-bold text-white text-xl mb-5" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
                 Related Articles
               </h2>
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {related.map((p) => (
                   <Link key={p.id} href={`/blog/${p.slug}`} className="block group">
-                    <Card variant="subtle" hoverEffect="lift" className="p-4 rounded-xl h-full flex flex-col justify-between">
-                      <p className="font-semibold text-slate-800 dark:text-slate-200 text-sm mb-1 group-hover:text-blue-600 transition-colors">{p.title}</p>
-                      <p className="text-xs text-slate-400">{p.readingTime}</p>
+                    <Card variant="subtle" hoverEffect="lift" className="p-4 rounded-xl h-full flex flex-col justify-between bg-[#0f1118] border border-amber-500/20 hover:border-amber-500/40">
+                      <p className="font-semibold text-white text-sm mb-1 group-hover:text-[#f9db8d] transition-colors">{p.title}</p>
+                      <p className="text-xs text-slate-400 mt-2">{p.readingTime}</p>
                     </Card>
                   </Link>
                 ))}
@@ -150,3 +151,4 @@ export default async function BlogPostPage({ params }: Props) {
     </main>
   );
 }
+

@@ -26,7 +26,7 @@ export default function Button({
   
   const variantStyles = {
     primary: "btn-primary shadow-lg hover:shadow-xl",
-    secondary: "btn-secondary hover:bg-blue-600 hover:text-white hover:border-blue-600",
+    secondary: "btn-secondary hover:bg-[#f9db8d]/15 hover:text-[#f9db8d] hover:border-[#f9db8d]",
     white: "btn-white shadow-md hover:shadow-lg",
     whatsapp: "btn-whatsapp shadow-md hover:shadow-lg",
   }[variant];

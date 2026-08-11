@@ -57,7 +57,7 @@ export function AppointmentModalProvider({ children }: { children: React.ReactNo
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={closeModal}
-              className="fixed inset-0 bg-slate-950/70 backdrop-blur-md z-[100]"
+              className="fixed inset-0 bg-[#000000]/80 backdrop-blur-md z-[100]"
             />
 
             {/* Modal Box */}
@@ -67,29 +67,29 @@ export function AppointmentModalProvider({ children }: { children: React.ReactNo
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="w-full max-w-xl bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 pointer-events-auto my-8 overflow-hidden relative"
+                className="w-full max-w-xl bg-[#0f1118] rounded-3xl shadow-2xl border border-amber-500/30 pointer-events-auto my-8 overflow-hidden relative"
                 role="dialog"
                 aria-modal="true"
                 aria-label="Book Appointment Modal"
               >
                 {/* Header Strip */}
-                <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-teal-600 p-6 text-white relative">
+                <div className="bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-600 p-6 text-[#07080c] relative">
                   <button
                     onClick={closeModal}
-                    className="absolute top-5 right-5 w-8 h-8 rounded-full bg-black/20 hover:bg-black/40 flex items-center justify-center text-white transition-colors"
+                    className="absolute top-5 right-5 w-8 h-8 rounded-full bg-[#07080c]/30 hover:bg-[#07080c]/60 flex items-center justify-center text-white transition-colors cursor-pointer"
                     aria-label="Close appointment modal"
                   >
                     <X size={18} />
                   </button>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center">
-                      <Calendar size={20} className="text-white" />
+                    <div className="w-10 h-10 rounded-xl bg-[#07080c]/20 backdrop-blur-md flex items-center justify-center">
+                      <Calendar size={20} className="text-[#07080c]" />
                     </div>
                     <div>
-                      <h3 className="font-extrabold text-xl leading-tight" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
+                      <h3 className="font-extrabold text-xl leading-tight text-[#07080c]" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
                         Book Free Dental Consultation
                       </h3>
-                      <p className="text-blue-100 text-xs mt-0.5">
+                      <p className="text-[#07080c]/80 text-xs font-semibold mt-0.5">
                         Guaranteed callback within 30 minutes • Zero cancellation fee
                       </p>
                     </div>
@@ -97,7 +97,7 @@ export function AppointmentModalProvider({ children }: { children: React.ReactNo
                 </div>
 
                 {/* Form Body */}
-                <div className="p-6 md:p-8 max-h-[80vh] overflow-y-auto">
+                <div className="p-6 md:p-8 max-h-[80vh] overflow-y-auto bg-[#0f1118]">
                   <AppointmentForm />
                 </div>
               </motion.div>
@@ -108,3 +108,4 @@ export function AppointmentModalProvider({ children }: { children: React.ReactNo
     </AppointmentModalContext.Provider>
   );
 }
+

@@ -53,23 +53,23 @@ export default async function TreatmentPage({ params }: Props) {
   ) : null;
 
   return (
-    <main className="pt-20">
+    <main className="pt-20 bg-[#07080c]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
       {faqSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
 
       {/* Hero */}
-      <section className="relative py-20 bg-slate-950 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(15,23,42,0.8),rgba(2,6,23,1))]" />
+      <section className="relative py-20 bg-[#07080c] text-white border-b border-amber-500/20 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(234,179,8,0.12),transparent_70%)]" />
         <div className="container relative z-10">
           {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-blue-300 mb-6">
-            <Link href="/" className="hover:text-white">Home</Link>
-            <ChevronRight size={12} />
-            <Link href="/treatments" className="hover:text-white">Treatments</Link>
-            <ChevronRight size={12} />
-            <span className="text-white">{service.title}</span>
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-slate-400 mb-6">
+            <Link href="/" className="hover:text-[#f9db8d] transition-colors">Home</Link>
+            <ChevronRight size={12} className="text-[#f9db8d]" />
+            <Link href="/treatments" className="hover:text-[#f9db8d] transition-colors">Treatments</Link>
+            <ChevronRight size={12} className="text-[#f9db8d]" />
+            <span className="text-[#f9db8d] font-semibold">{service.title}</span>
           </nav>
           
           <div className="grid lg:grid-cols-12 gap-8 items-center">
@@ -78,17 +78,17 @@ export default async function TreatmentPage({ params }: Props) {
                 <h1 className="text-white font-black mb-4" style={{ fontFamily: "var(--font-plus-jakarta)", fontSize: "clamp(2.5rem, 5vw, 4rem)" }}>
                   {service.title}
                 </h1>
-                <p className="text-blue-100 text-lg leading-relaxed max-w-2xl mb-6">{service.shortDesc}</p>
-                <div className="flex flex-wrap gap-4 text-sm text-blue-200">
-                  <span className="flex items-center gap-1.5"><Clock size={15} className="text-teal-400" />{service.duration}</span>
-                  <span className="flex items-center gap-1.5 font-bold text-teal-300"><DollarSign size={15} className="text-teal-400" />{service.cost}</span>
-                  <span className="flex items-center gap-1.5"><ShieldCheck size={15} className="text-teal-400" />100% Painless Guarantee</span>
+                <p className="text-slate-300 text-lg leading-relaxed max-w-2xl mb-6">{service.shortDesc}</p>
+                <div className="flex flex-wrap gap-4 text-sm text-slate-300">
+                  <span className="flex items-center gap-1.5"><Clock size={15} className="text-[#f9db8d]" />{service.duration}</span>
+                  <span className="flex items-center gap-1.5 font-bold text-[#f9db8d]"><DollarSign size={15} className="text-[#f9db8d]" />{service.cost}</span>
+                  <span className="flex items-center gap-1.5"><ShieldCheck size={15} className="text-[#f9db8d]" />100% Painless Guarantee</span>
                 </div>
               </AnimatedSection>
             </div>
 
             <div className="lg:col-span-5 relative hidden lg:block">
-              <div className="relative rounded-3xl overflow-hidden aspect-[4/3] border border-white/10 shadow-2xl bg-slate-900">
+              <div className="relative rounded-3xl overflow-hidden aspect-[4/3] border border-amber-500/30 shadow-[0_0_40px_rgba(249,219,141,0.15)] bg-[#0f1118]">
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -110,24 +110,24 @@ export default async function TreatmentPage({ params }: Props) {
           <div className="lg:col-span-2 space-y-8">
             {/* Overview */}
             <AnimatedSection>
-              <Card variant="default">
-                <h2 className="font-bold text-slate-900 dark:text-white text-2xl mb-4" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
+              <Card variant="default" className="bg-[#0f1118] border border-amber-500/20">
+                <h2 className="font-bold text-white text-2xl mb-4" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
                   About {service.title}
                 </h2>
-                <p className="text-slate-500 dark:text-slate-400 leading-relaxed">{service.fullDesc}</p>
+                <p className="text-slate-300 leading-relaxed">{service.fullDesc}</p>
               </Card>
             </AnimatedSection>
 
             {/* Benefits */}
             <AnimatedSection delay={0.1}>
-              <Card variant="default">
-                <h2 className="font-bold text-slate-900 dark:text-white text-2xl mb-5" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
+              <Card variant="default" className="bg-[#0f1118] border border-amber-500/20">
+                <h2 className="font-bold text-white text-2xl mb-5" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
                   Key Benefits
                 </h2>
                 <ul className="space-y-3">
                   {service.benefits.map((b) => (
-                    <li key={b} className="flex items-start gap-3 text-slate-600 dark:text-slate-400">
-                      <CheckCircle2 size={18} className="text-teal-500 flex-shrink-0 mt-0.5" />
+                    <li key={b} className="flex items-start gap-3 text-slate-300">
+                      <CheckCircle2 size={18} className="text-[#f9db8d] flex-shrink-0 mt-0.5" />
                       <span>{b}</span>
                     </li>
                   ))}
@@ -137,17 +137,17 @@ export default async function TreatmentPage({ params }: Props) {
 
             {/* Procedure */}
             <AnimatedSection delay={0.2}>
-              <Card variant="default">
-                <h2 className="font-bold text-slate-900 dark:text-white text-2xl mb-5" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
+              <Card variant="default" className="bg-[#0f1118] border border-amber-500/20">
+                <h2 className="font-bold text-white text-2xl mb-5" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
                   Treatment Procedure
                 </h2>
                 <ol className="space-y-4">
                   {service.procedure.map((step, i) => (
                     <li key={i} className="flex gap-4">
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-600 to-teal-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-yellow-600 flex items-center justify-center text-[#07080c] text-xs font-bold flex-shrink-0">
                         {i + 1}
                       </div>
-                      <p className="text-slate-600 dark:text-slate-400 pt-1">{step}</p>
+                      <p className="text-slate-300 pt-1">{step}</p>
                     </li>
                   ))}
                 </ol>
@@ -157,15 +157,15 @@ export default async function TreatmentPage({ params }: Props) {
             {/* FAQs */}
             {service.faqs.length > 0 && (
               <AnimatedSection delay={0.3}>
-                <Card variant="default">
-                  <h2 className="font-bold text-slate-900 dark:text-white text-2xl mb-5" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
+                <Card variant="default" className="bg-[#0f1118] border border-amber-500/20">
+                  <h2 className="font-bold text-white text-2xl mb-5" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
                     Frequently Asked Questions
                   </h2>
                   <div className="space-y-4">
                     {service.faqs.map((faq) => (
-                      <div key={faq.id} className="border-b border-slate-100 dark:border-slate-800 pb-4 last:border-0">
-                        <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">{faq.question}</h3>
-                        <p className="text-slate-500 dark:text-slate-400 text-sm">{faq.answer}</p>
+                      <div key={faq.id} className="border-b border-amber-500/10 pb-4 last:border-0">
+                        <h3 className="font-semibold text-white mb-2">{faq.question}</h3>
+                        <p className="text-slate-300 text-sm">{faq.answer}</p>
                       </div>
                     ))}
                   </div>
@@ -177,18 +177,18 @@ export default async function TreatmentPage({ params }: Props) {
           {/* Sidebar */}
           <div className="space-y-5">
             {/* Appointment Form */}
-            <Card variant="default" className="sticky top-24">
-              <h3 className="font-bold text-slate-900 dark:text-white text-lg mb-2" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
+            <Card variant="default" className="sticky top-24 bg-[#0f1118] border border-amber-500/20">
+              <h3 className="font-bold text-white text-lg mb-2" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
                 Book Appointment
               </h3>
               <p className="text-slate-400 text-sm mb-5">Free consultation • No obligation</p>
               <AppointmentForm compact />
-              <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2">
-                <a href={`tel:${SITE.phoneRaw}`} className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-colors">
-                  <Phone size={14} />{SITE.phone}
+              <div className="mt-4 pt-4 border-t border-amber-500/20 space-y-2">
+                <a href={`tel:${SITE.phoneRaw}`} className="flex items-center gap-2 text-sm text-slate-300 hover:text-[#f9db8d] transition-colors">
+                  <Phone size={14} className="text-[#f9db8d]" />{SITE.phone}
                 </a>
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 hover:text-green-600 transition-colors">
-                  <MessageCircle size={14} />WhatsApp Us
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-slate-300 hover:text-green-400 transition-colors">
+                  <MessageCircle size={14} className="text-green-400" />WhatsApp Us
                 </a>
               </div>
             </Card>
