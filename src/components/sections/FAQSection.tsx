@@ -86,14 +86,14 @@ export default function FAQSection() {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.8 }}
-            className="text-center mt-8"
+            className="text-center mt-10"
           >
             <a
               href="/faq"
-              className="text-amber-400 hover:text-amber-300 font-semibold text-sm inline-flex items-center gap-1.5"
+              className="btn-secondary text-sm px-6 py-2.5 rounded-full inline-flex items-center gap-2"
             >
-              View All FAQs
-              <ChevronDown size={14} className="-rotate-90" />
+              <span>View All FAQs</span>
+              <ChevronDown size={14} className="-rotate-90 text-[#f9db8d]" />
             </a>
           </motion.div>
         </div>

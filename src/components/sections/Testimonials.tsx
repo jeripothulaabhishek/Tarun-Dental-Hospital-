@@ -64,12 +64,12 @@ export default function Testimonials() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <div className="embla" ref={emblaRef} aria-roledescription="carousel" aria-label="Patient testimonials carousel">
-            <div className="embla__container">
+          <div className="embla overflow-hidden" ref={emblaRef} aria-roledescription="carousel" aria-label="Patient testimonials carousel">
+            <div className="embla__container flex -ml-4">
               {testimonials.map((t) => (
                 <div
                   key={t.id}
-                  className="embla__slide w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] min-w-0"
+                  className="embla__slide flex-[0_0_100%] min-w-0 pl-4 sm:flex-[0_0_50%] lg:flex-[0_0_33.333%]"
                   role="group"
                   aria-roledescription="slide"
                   aria-label={`Review by ${t.name}`}
@@ -77,13 +77,13 @@ export default function Testimonials() {
                   <Card
                     variant="default"
                     hoverEffect="lift"
-                    className="h-full flex flex-col transition-all duration-300 bg-[#0f1118] border border-amber-500/20 hover:border-amber-500/40"
+                    className="h-full flex flex-col transition-all duration-300 bg-[#0f1118] border border-amber-500/20 hover:border-amber-500/40 p-6"
                   >
                     {/* Header */}
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <StarRating rating={t.rating} />
-                        <p className="text-xs text-amber-300/80 mt-1 font-mono">{t.service}</p>
+                        <p className="text-xs text-[#f9db8d] mt-1 font-mono font-semibold">{t.service}</p>
                       </div>
                       <div className="flex items-center gap-1.5">
                         {t.source === "Google" && (
@@ -95,13 +95,13 @@ export default function Testimonials() {
                           </svg>
                         )}
                         {t.verified && (
-                          <BadgeCheck size={14} className="text-amber-400" aria-label="Verified review" />
+                          <BadgeCheck size={14} className="text-[#f9db8d]" aria-label="Verified review" />
                         )}
                       </div>
                     </div>
 
                     {/* Quote */}
-                    <Quote size={20} className="text-amber-400/40 mb-3" aria-hidden="true" />
+                    <Quote size={20} className="text-[#f9db8d]/40 mb-3" aria-hidden="true" />
                     <p className="text-slate-300 text-sm leading-relaxed flex-1 mb-4">
                       {t.review}
                     </p>
@@ -134,9 +134,9 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.5 }}
-          className="mt-10 max-w-md mx-auto"
+          className="mt-12 md:mt-16 max-w-md mx-auto"
         >
-          <Card variant="default" className="flex flex-col sm:flex-row items-center justify-center gap-4 p-6 bg-[#0f1118] border border-amber-500/30 shadow-[0_0_30px_rgba(234,179,8,0.1)]">
+          <Card variant="default" className="flex flex-col sm:flex-row items-center justify-center gap-4 p-6 bg-[#0f1118] border border-amber-500/30 shadow-[0_0_30px_rgba(249,219,141,0.1)]">
             <div className="flex items-center gap-3">
               <svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -149,7 +149,7 @@ export default function Testimonials() {
                   <span className="text-2xl font-black text-[#ffffff]">4.9</span>
                   <StarRating rating={5} />
                 </div>
-                <p className="text-xs text-amber-300">Google Rating</p>
+                <p className="text-xs text-[#f9db8d]">Google Rating</p>
               </div>
             </div>
             <div className="h-px sm:h-12 w-full sm:w-px bg-amber-500/20" />

@@ -27,34 +27,34 @@ export default function Footer() {
       aria-label="Site footer"
     >
       {/* ─── Top CTA Strip ─── */}
-      <div className="bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-600 text-[#07080c]">
-        <div className="container py-10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <p className="text-lg font-extrabold text-[#07080c]">
+      <div className="bg-gradient-to-r from-[#f9db8d] via-[#e3b768] to-[#bb8e4b] text-[#07080c] py-6 sm:py-8">
+        <div className="container">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
+            <div className="text-center md:text-left">
+              <p className="text-lg sm:text-xl font-extrabold text-[#07080c]" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
                 Ready to Transform Your Smile?
               </p>
-              <p className="text-[#07080c]/80 text-sm font-medium mt-0.5">
+              <p className="text-[#07080c]/80 text-xs sm:text-sm font-semibold mt-0.5">
                 Book your free consultation today — no obligation
               </p>
             </div>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap items-center justify-center gap-3">
               <button
                 onClick={() => openModal()}
-                className="px-6 py-3 rounded-full bg-[#07080c] text-amber-400 font-bold text-sm hover:bg-[#12141d] transition-all shadow-lg flex items-center gap-2 cursor-pointer"
+                className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-[#07080c] text-[#f9db8d] font-bold text-xs sm:text-sm hover:bg-[#12141d] transition-all shadow-lg flex items-center gap-2 cursor-pointer"
               >
                 <Calendar size={15} />
                 Book Appointment
               </button>
-              <a href={`tel:${SITE.phoneRaw}`} className="px-6 py-3 rounded-full bg-[#07080c]/90 text-white font-bold text-sm hover:bg-[#07080c] transition-all shadow-md flex items-center gap-2">
-                <Phone size={15} className="text-amber-400" />
+              <a href={`tel:${SITE.phoneRaw}`} className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-[#07080c]/90 text-white font-bold text-xs sm:text-sm hover:bg-[#07080c] transition-all shadow-md flex items-center gap-2">
+                <Phone size={15} className="text-[#f9db8d]" />
                 Call Now
               </a>
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-whatsapp text-sm"
+                className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-[#25d366] text-white font-bold text-xs sm:text-sm hover:bg-[#1fba5a] transition-all shadow-md flex items-center gap-2"
               >
                 <MessageCircle size={15} />
                 WhatsApp
@@ -70,7 +70,7 @@ export default function Footer() {
           {/* Column 1 — Brand */}
           <div className="space-y-5">
             <Link href="/" className="flex items-center gap-2.5" aria-label="Home">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-300 via-amber-500 to-yellow-600 flex items-center justify-center shadow-[0_0_15px_rgba(234,179,8,0.3)]">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#f9db8d] via-[#e3b768] to-[#bb8e4b] flex items-center justify-center shadow-[0_0_15px_rgba(249,219,141,0.3)]">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path
                     d="M12 2C8.5 2 6 4.5 6 7c0 1.5.6 2.8 1.5 3.8C6.8 12 6 14 6 16c0 2.2 1.3 4 3 4.7V21a1 1 0 002 0v-.3c1.7-.7 3-2.5 3-4.7 0-2-.8-4-1.5-5.2C13.4 9.8 14 8.5 14 7c0-2.5-2.5-5-2-5z"
@@ -79,10 +79,10 @@ export default function Footer() {
                 </svg>
               </div>
               <div>
-                <div className="font-bold text-amber-400 text-base" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
+                <div className="font-bold text-[#f9db8d] text-base" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
                   Tarun Dental Hospital
                 </div>
-                <div className="text-amber-300/70 text-[10px] tracking-wide">
+                <div className="text-slate-400 text-[10px] tracking-wide">
                   Pragathi Nagar, Hyderabad
                 </div>
               </div>
@@ -104,7 +104,7 @@ export default function Footer() {
                   <span className="text-white font-bold text-sm">{SITE.googleRating}</span>
                   <StarRating rating={5} size={11} />
                 </div>
-                <p className="text-amber-300/80 text-[10px]">{SITE.reviewCount.toLocaleString()}+ reviews</p>
+                <p className="text-[#f9db8d] text-[10px]">{SITE.reviewCount.toLocaleString()}+ reviews</p>
               </div>
             </div>
             {/* Socials */}
@@ -121,7 +121,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 rounded-lg bg-[#0f1118] border border-amber-500/20 hover:border-amber-400 hover:bg-amber-400 hover:text-[#07080c] flex items-center justify-center text-amber-400 transition-all duration-200"
+                  className="w-9 h-9 rounded-lg bg-[#0f1118] border border-amber-500/20 hover:border-[#f9db8d] hover:bg-[#f9db8d] hover:text-[#07080c] flex items-center justify-center text-[#f9db8d] transition-all duration-200"
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d={path} />
@@ -133,7 +133,7 @@ export default function Footer() {
 
           {/* Column 2 — Quick Links */}
           <div>
-            <h3 className="text-amber-400 font-semibold text-xs mb-4 tracking-wider uppercase">
+            <h3 className="text-[#f9db8d] font-semibold text-xs mb-4 tracking-wider uppercase font-mono">
               Quick Links
             </h3>
             <ul className="space-y-2.5">
@@ -141,9 +141,9 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="flex items-center gap-1.5 text-slate-300 hover:text-amber-400 text-sm transition-colors"
+                    className="flex items-center gap-1.5 text-slate-300 hover:text-[#f9db8d] text-sm transition-colors"
                   >
-                    <ChevronRight size={13} className="text-amber-400" />
+                    <ChevronRight size={13} className="text-[#f9db8d]" />
                     {link.label}
                   </Link>
                 </li>
@@ -151,9 +151,9 @@ export default function Footer() {
               <li>
                 <Link
                   href="/faq"
-                  className="flex items-center gap-1.5 text-slate-300 hover:text-amber-400 text-sm transition-colors"
+                  className="flex items-center gap-1.5 text-slate-300 hover:text-[#f9db8d] text-sm transition-colors"
                 >
-                  <ChevronRight size={13} className="text-amber-400" />
+                  <ChevronRight size={13} className="text-[#f9db8d]" />
                   FAQ
                 </Link>
               </li>
@@ -162,7 +162,7 @@ export default function Footer() {
 
           {/* Column 3 — Treatments */}
           <div>
-            <h3 className="text-amber-400 font-semibold text-xs mb-4 tracking-wider uppercase">
+            <h3 className="text-[#f9db8d] font-semibold text-xs mb-4 tracking-wider uppercase font-mono">
               Treatments
             </h3>
             <ul className="space-y-2.5">
@@ -178,9 +178,9 @@ export default function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="flex items-center gap-1.5 text-slate-300 hover:text-amber-400 text-sm transition-colors"
+                    className="flex items-center gap-1.5 text-slate-300 hover:text-[#f9db8d] text-sm transition-colors"
                   >
-                    <ChevronRight size={13} className="text-amber-400" />
+                    <ChevronRight size={13} className="text-[#f9db8d]" />
                     {item.label}
                   </Link>
                 </li>
@@ -190,17 +190,17 @@ export default function Footer() {
 
           {/* Column 4 — Contact */}
           <div>
-            <h3 className="text-amber-400 font-semibold text-xs mb-4 tracking-wider uppercase">
+            <h3 className="text-[#f9db8d] font-semibold text-xs mb-4 tracking-wider uppercase font-mono">
               Contact Info
             </h3>
             <ul className="space-y-4">
               <li>
                 <a
                   href={`tel:${SITE.phoneRaw}`}
-                  className="flex gap-3 text-slate-300 hover:text-amber-400 transition-colors group"
+                  className="flex gap-3 text-slate-300 hover:text-[#f9db8d] transition-colors group"
                   aria-label={`Call ${SITE.phone}`}
                 >
-                  <div className="w-8 h-8 rounded-lg bg-[#0f1118] border border-amber-500/20 group-hover:border-amber-400 group-hover:bg-amber-400 group-hover:text-[#07080c] flex items-center justify-center flex-shrink-0 transition-colors text-amber-400">
+                  <div className="w-8 h-8 rounded-lg bg-[#0f1118] border border-amber-500/20 group-hover:border-[#f9db8d] group-hover:bg-[#f9db8d] group-hover:text-[#07080c] flex items-center justify-center flex-shrink-0 transition-colors text-[#f9db8d]">
                     <Phone size={14} />
                   </div>
                   <div>
@@ -212,19 +212,19 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${SITE.email}`}
-                  className="flex gap-3 text-slate-300 hover:text-amber-400 transition-colors group"
+                  className="flex gap-3 text-slate-300 hover:text-[#f9db8d] transition-colors group"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-[#0f1118] border border-amber-500/20 group-hover:border-amber-400 group-hover:bg-amber-400 group-hover:text-[#07080c] flex items-center justify-center flex-shrink-0 transition-colors text-amber-400">
+                  <div className="w-8 h-8 rounded-lg bg-[#0f1118] border border-amber-500/20 group-hover:border-[#f9db8d] group-hover:bg-[#f9db8d] group-hover:text-[#07080c] flex items-center justify-center flex-shrink-0 transition-colors text-[#f9db8d]">
                     <Mail size={14} />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <p className="text-xs text-slate-400 mb-0.5">Email</p>
-                    <p className="text-sm font-medium">{SITE.email}</p>
+                    <p className="text-sm font-medium break-all">{SITE.email}</p>
                   </div>
                 </a>
               </li>
               <li className="flex gap-3 text-slate-300">
-                <div className="w-8 h-8 rounded-lg bg-[#0f1118] border border-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-[#0f1118] border border-amber-500/20 text-[#f9db8d] flex items-center justify-center flex-shrink-0">
                   <MapPin size={14} />
                 </div>
                 <div>
@@ -233,7 +233,7 @@ export default function Footer() {
                 </div>
               </li>
               <li className="flex gap-3 text-slate-300">
-                <div className="w-8 h-8 rounded-lg bg-[#0f1118] border border-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-[#0f1118] border border-amber-500/20 text-[#f9db8d] flex items-center justify-center flex-shrink-0">
                   <Clock size={14} />
                 </div>
                 <div>

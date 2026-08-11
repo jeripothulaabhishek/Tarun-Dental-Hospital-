@@ -28,7 +28,7 @@ export default function AppointmentPopup() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed bottom-24 left-4 right-4 md:left-auto md:right-6 md:w-80 bg-[#0f1118] rounded-2xl shadow-2xl border border-amber-500/30 z-50 overflow-hidden"
+          className="fixed bottom-20 sm:bottom-24 md:bottom-28 left-4 right-4 md:left-auto md:right-20 md:w-80 bg-[#0f1118] rounded-2xl shadow-2xl border border-amber-500/30 z-40 overflow-hidden"
           role="dialog"
           aria-modal="true"
           aria-label="Book appointment offer"
