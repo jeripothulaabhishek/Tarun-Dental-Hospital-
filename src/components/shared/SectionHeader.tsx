@@ -21,7 +21,6 @@ export default function SectionHeader({
   subtitle,
   centered = true,
   className = "",
-  light = false,
 }: SectionHeaderProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
@@ -41,16 +40,16 @@ export default function SectionHeader({
       {label && (
         <motion.p
           variants={fadeInUp}
-          className="section-label justify-center"
+          className="section-label justify-center text-[#f9db8d]"
           style={{ justifyContent: centered ? "center" : "flex-start" }}
         >
           <span
-            className="w-6 h-px bg-amber-400 inline-block"
+            className="w-6 h-px bg-[#f9db8d] inline-block"
             aria-hidden="true"
           />
           {label}
           <span
-            className="w-6 h-px bg-amber-400 inline-block"
+            className="w-6 h-px bg-[#f9db8d] inline-block"
             aria-hidden="true"
           />
         </motion.p>
@@ -62,7 +61,7 @@ export default function SectionHeader({
       >
         {titleParts[0]}
         {titleHighlight && (
-          <span className="bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-500 bg-clip-text text-transparent">{titleHighlight}</span>
+          <span className="bg-gradient-to-r from-[#f9db8d] via-[#e3b768] to-[#bb8e4b] bg-clip-text text-transparent">{titleHighlight}</span>
         )}
         {titleParts[1]}
       </motion.h2>
@@ -79,4 +78,5 @@ export default function SectionHeader({
     </motion.div>
   );
 }
+
 

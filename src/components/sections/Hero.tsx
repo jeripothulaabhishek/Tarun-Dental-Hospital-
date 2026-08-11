@@ -123,7 +123,7 @@ export default function Hero() {
             >
               Advanced.
               <br />
-              <span className="bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-500 bg-clip-text text-transparent drop-shadow-sm">
+              <span className="bg-gradient-to-r from-[#f9db8d] via-[#e3b768] to-[#bb8e4b] bg-clip-text text-transparent drop-shadow-sm">
                 Painless.
               </span>
               <br />
